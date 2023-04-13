@@ -21,7 +21,6 @@ class Equipo(models.Model):
 
 # Creacion de la clase Ticket
 class Ticket(models.Model):
-<<<<<<< HEAD
     nref = models.CharField.primary_key(max_length = 20)
     titulo = models.CharField(max_length = 10)
     descripcion = models.CharField(max_length = 50)
@@ -34,20 +33,6 @@ class Ticket(models.Model):
     cometarios = models.CharField(max_length = 40)
     
     #Devuelve un string con la referencia, el titulo, y la descripcion de cada Equipo creado.
-=======
-    nref = models.CharField.primary_key(max_length=20)
-    Titulo = models.CharField(max_length=10)
-    Descripcion = models.CharField(max_length=50)
-    FechaApertura = models.DateTimeField()
-    FechaResolucion = models.DateTimeField()
-    NivelUrgencia = models.(max_length=5)
-    TipoTicket = models.(max_length=15)
-    EstadoTicket = models.BooleanField()
-    Empleadoticket = models.CharField(max_length=15)
-    Cometarios = models.CharField(max_length=40)
-
-    # Devuelve un string con la marca, el modelo, y el numero de serie de cada Equipo creado.
->>>>>>> 6abc8c829a58d8282215f4fe733ba19bd63f3229
     def __str__(self):
         return f" Referencia: {self.nref}. Titulo: {self.Titulo}. Descripcion: {self.Descripcion}"
 
