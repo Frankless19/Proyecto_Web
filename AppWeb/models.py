@@ -28,7 +28,7 @@ class Ticket(models.Model):
     fechaResolucion = models.DateTimeField()
     nivelUrgencia = models.(max_length = 5)
     tipoTicket = models.(max_length = 15)
-    estadoTicket = models.BooleanField()
+    estadoTicket = models.CharField()
     empleadoticket = models.CharField(max_length = 15)
     cometarios = models.CharField(max_length = 40)
     
