@@ -1,0 +1,43 @@
+{% extends "homeEmpleados.html" %}
+{% load static %}
+
+{% block contenido %}
+<div class="contenido">
+    <h1 id="titulo">Listado de empleados</h1>
+    <div class="cuerpoListado">
+        <div class="tabla">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                </tr>
+                {% if object_list %}
+                {% for emp in object_list %}
+                <tr>
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.dni}}</td>
+                    <td>{{emp.Nombre}}</td>
+                    <td>{{emp.Apellidos}}</td>
+                    <td>{{emp.Email}}</td>
+                    <td>{{emp.Telefono}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% else %}
+        <h1 id="NoHay">No hay empleados en la base de datos</h1>
+        {% endif %}
+        <div id="añadirDatos" style="display:none;">
+            <form method="POST" id="formDNI">
+                {% csrf_token %} 
+                <button type="submit" class="Guardar">Guardar</button>
+            </form>
+            <a href="{% url 'gestion:listado-empleado' %}">
+        </div>
+    </div>
+</div>  
+{% endblock %}

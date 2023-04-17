@@ -2,9 +2,8 @@ from django.db import models
 
 # Creacion de la clase equipo
 
-
 class Equipo(models.Model):
-    nserie = models.CharField.primary_key(max_length=20)
+    nserie = models.CharField(max_length=20)
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=30)
     tipoEquipo = models.CharField(max_length=20)
@@ -21,14 +20,14 @@ class Equipo(models.Model):
 
 # Creacion de la clase Ticket
 class Ticket(models.Model):
-    nref = models.CharField.primary_key(max_length = 20)
+    nref = models.CharField(max_length = 20)
     titulo = models.CharField(max_length = 10)
     descripcion = models.CharField(max_length = 50)
     fechaApertura = models.DateTimeField()
     fechaResolucion = models.DateTimeField()
-    nivelUrgencia = models.(max_length = 5)
-    tipoTicket = models.(max_length = 15)
-    estadoTicket = models.BooleanField()
+    nivelUrgencia = models.ForeignKey('NivelUrgencia', on_delete=models.CASCADE)
+    tipoTicket = models.ForeignKey('TipoTicket', on_delete=models.CASCADE)
+    estadoTicket = models.ForeignKey('EstadoTicket', on_delete=models.CASCADE)
     empleadoticket = models.CharField(max_length = 15)
     cometarios = models.CharField(max_length = 40)
     
@@ -40,7 +39,7 @@ class Ticket(models.Model):
 
 
 class Empleado(models.Model):
-    dni = models.CharField.primary_key(max_length=9)
+    dni = models.CharField(max_length=9)
     nombre = models.CharField(max_length=15)
     apellidos = models.CharField(max_length=25)
     email = models.CharField(max_length=30)
@@ -50,3 +49,12 @@ class Empleado(models.Model):
 
     def __str__(self):
         return f" Nombre: {self.nombre}. {self.apellidos}. Descripcion: {self.dni}"
+
+class NivelUrgencia(models.Model):
+    nombre = models.CharField(max_length=20)
+
+class TipoTicket(models.Model):
+    nombre = models.CharField(max_length=20)
+    
+class EstadoTicket(models.Model):
+    nombre = models.CharField(max_length=20)
