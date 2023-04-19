@@ -6,7 +6,7 @@ class Equipo(models.Model):
     nserie = models.CharField(max_length=20)
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=30)
-    tipoEquipo = models.CharField(max_length=20)
+    tipo = models.CharField(max_length=20)
     fechaAdquisicion = models.DateTimeField()
     fechaPuestaMarcha = models.DateTimeField()
     provNombre = models.CharField(max_length=30)
@@ -25,10 +25,11 @@ class Ticket(models.Model):
     descripcion = models.CharField(max_length = 50)
     fechaApertura = models.DateTimeField()
     fechaResolucion = models.DateTimeField()
-    nivelUrgencia = models.ForeignKey('NivelUrgencia', on_delete=models.CASCADE)
-    tipoTicket = models.ForeignKey('TipoTicket', on_delete=models.CASCADE)
-    estadoTicket = models.ForeignKey('EstadoTicket', on_delete=models.CASCADE)
-    empleadoticket = models.CharField(max_length = 15)
+    nivelUrgencia = models.ForeignKey('NivelUrgencia', on_delete=models.CASCADE) # relación one-to-many para seleccionar el nivel de urgencia
+    tipo = models.ForeignKey('TipoTicket', on_delete=models.CASCADE) # relación one-to-many para seleccionar el tipo de ticket
+    estado = models.ForeignKey('EstadoTicket', on_delete=models.CASCADE) # relación one-to-many para seleccionar el estado del ticket
+    empleado = models.ForeignKey('Empleado', on_delete=models.CASCADE) # relación one-to-many, un ticket solo es atendido por un empleado
+    equipo = models.ForeignKey('Equipo', on_delete=models.CASCADE) # relación one-to-many, un ticket solo puede tener un equipo
     cometarios = models.CharField(max_length = 40)
     
     #Devuelve un string con la referencia, el titulo, y la descripcion de cada Equipo creado.

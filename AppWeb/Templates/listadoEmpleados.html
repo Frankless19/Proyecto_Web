@@ -3,41 +3,25 @@
 
 {% block contenido %}
 <div class="contenido">
-    <h1 id="titulo">Listado de empleados</h1>
-    <div class="cuerpoListado">
-        <div class="tabla">
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>DNI</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Email</th>
-                    <th>Telefono</th>
-                </tr>
-                {% if object_list %}
-                {% for emp in object_list %}
-                <tr>
-                    <td>{{emp.id}}</td>
-                    <td>{{emp.dni}}</td>
-                    <td>{{emp.Nombre}}</td>
-                    <td>{{emp.Apellidos}}</td>
-                    <td>{{emp.Email}}</td>
-                    <td>{{emp.Telefono}}</td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
-        {% else %}
-        <h1 id="NoHay">No hay empleados en la base de datos</h1>
-        {% endif %}
-        <div id="añadirDatos" style="display:none;">
-            <form method="POST" id="formDNI">
-                {% csrf_token %} 
-                <button type="submit" class="Guardar">Guardar</button>
-            </form>
-            <a href="{% url 'gestion:listado-empleado' %}">
-        </div>
+    <h1>Lista de empleados:</h1>
+    <div id="mas">
+        <a href="http://127.0.0.1:8000/AppWeb/crearEmpleado/"><img class="crear" src="{% static 'images/' %}" title="Crear un empleado nuevo"></a>        
     </div>
-</div>  
+    {% if object_list %}
+        {% for emp in object_list %}
+        <ul>
+            <blockquote>
+                <b>ID Empleado: {{empleado.id}}</b><br>
+                <b>Nombre y apellidos:</b>{{empleado.nombre}} {{empleadoapellidos}}</b><br>
+                <b>DNI:</b> {{ empleado.dni }}<br>
+                <a href="{% url 'gestion:detalle-empleado' emp.id %}"><img class="detalle" src="{% static 'images/info.png' %}" title="Pulsa para ver los detalles del empleado"></a>
+                <a href="{% url 'gestion:editar-empleado' emp.id %}"><img src="{% static 'images/edit.png' %}" title="Pulsa para editar el empleado"></a>
+                <a href="{% url 'gestion:borrar-empleado' emp.id %}"><img src="{% static 'images/eliminar.png' %}" title="Pulsa para eliminar el empleado"></a>
+            </blockquote>
+        </ul>
+        {% endfor %}
+    {% else %}
+        <h1>No hay empleados disponibles</h1>
+    {% endif %}
+</div>
 {% endblock %}
