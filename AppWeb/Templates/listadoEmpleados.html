@@ -10,14 +10,14 @@
     {% if object_list %}
         {% for emp in object_list %}
         <ul>
-            <blockquote>
-                <b>ID Empleado: {{empleado.id}}</b><br>
-                <b>Nombre y apellidos:</b>{{empleado.nombre}} {{empleadoapellidos}}</b><br>
-                <b>DNI:</b> {{ empleado.dni }}<br>
-                <a href="{% url 'gestion:detalle-empleado' emp.id %}"><img class="detalle" src="{% static 'images/info.png' %}" title="Pulsa para ver los detalles del empleado"></a>
-                <a href="{% url 'gestion:editar-empleado' emp.id %}"><img src="{% static 'images/edit.png' %}" title="Pulsa para editar el empleado"></a>
-                <a href="{% url 'gestion:borrar-empleado' emp.id %}"><img src="{% static 'images/eliminar.png' %}" title="Pulsa para eliminar el empleado"></a>
-            </blockquote>
+            <div>
+                <p>ID Empleado: {{empleado.id}}</p><br>
+                <p>Nombre y apellidos:</p>{{empleado.nombre}} {{empleado.apellidos}}</p><br>
+                <p>DNI:</p> {{ empleado.dni }}<br>
+                <a href="{% url 'gestion:detalle-empleado' empleado.id %}"><img class="detalle" src="{% static 'images/info.png' %}" title="Pulsa para ver los detalles del empleado"></a>
+                <a href="{% url 'gestion:editar-empleado' empleado.id %}"><img src="{% static 'images/edit.png' %}" title="Pulsa para editar el empleado"></a>
+                <a href="{% url 'gestion:borrar-empleado' empleado.id %}"><img src="{% static 'images/eliminar.png' %}" title="Pulsa para eliminar el empleado"></a>
+            </div>
         </ul>
         {% endfor %}
     {% else %}
