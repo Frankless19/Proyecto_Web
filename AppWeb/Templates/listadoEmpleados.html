@@ -11,9 +11,9 @@
         {% for emp in object_list %}
         <ul>
             <div>
-                <p>ID Empleado: {{empleado.id}}</p><br>
-                <p>Nombre y apellidos:</p>{{empleado.nombre}} {{empleado.apellidos}}</p><br>
-                <p>DNI:</p> {{ empleado.dni }}<br>
+                <p>ID Empleado: {{emp.id}}</p><br>
+                <p>Nombre y apellidos:</p>{{emp.nombre}} {{emp.apellidos}}</p><br>
+                <p>DNI:</p> {{ emp.dni }}<br>
             </div>
         </ul>
         {% endfor %}
