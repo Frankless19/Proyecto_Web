@@ -1,9 +1,9 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Ticket, Empleado, EstadoTicket, NivelUrgencia, TipoTicket, Equipo
+from .models import Ticket, Empleado, Equipo
 
 # Formulario asociado a la clase Equipo
-class Equipo(ModelForm):
+class FormEquipo(ModelForm):
     class Meta:
         model = Equipo
         fields = '__all__'
@@ -12,7 +12,7 @@ class Equipo(ModelForm):
             'modelo': forms.TextInput(attrs={'class':'form-control'}),
             'marca': forms.TextInput(attrs={'class':'form-control'}),
             'email': forms.EmailInput(attrs={'class':'form-control'}),
-            'tipo': forms.NumberInput(attrs={'class':'form-control'}),
+            'tipo': forms.TextInput(attrs={'class':'form-control'}),
             'fechaAdquisicion': forms.DateTimeInput(attrs={'class':'form-control'}),
             'fechaPuestaMarcha': forms.DateTimeInput(attrs={'class':'form-control'}),
             'provNombre': forms.TextInput(attrs={'class':'form-control'}),
@@ -20,8 +20,8 @@ class Equipo(ModelForm):
             'planta': forms.TextInput(attrs={'class':'form-control'}),
         }
 
-         # Formulario asociado a la clase Ticket
-class Ticket(ModelForm):
+# Formulario asociado a la clase Ticket
+class FormTicket(ModelForm):
     class Meta:
         model = Ticket
         fields = '__all__'
@@ -31,16 +31,16 @@ class Ticket(ModelForm):
             'descripcion': forms.TextInput(attrs={'class':'form-control'}),
             'fechaApertura': forms.DateTimeInput(attrs={'class':'form-control'}),
             'fechaResolucion': forms.DateTimeInput(attrs={'class':'form-control'}),
-            'nivelUrgencia': forms.NumberInput(attrs={'class':'form-control'}),
-            'tipo': forms.TextInput(attrs={'class':'form-control'}),
-            'estado': forms.TextInput(attrs={'class':'form-control'}),
-            'empleado': forms.TextInput(attrs={'class':'form-control'}),
-            'equipo': forms.TextInput(attrs={'class':'form-control'}),
+            #'nivelUrgencia': forms.ChoiceField(attrs={'class':'form-control'}),
+            #'tipo': forms.ChoiceField(attrs={'class':'form-control'}),
+            #'estado': forms.ChoiceField(attrs={'class':'form-control'}),
+            #'empleado': forms.ChoiceField(attrs={'class':'form-control'}),
+            #'equipo': forms.ChoiceField(attrs={'class':'form-control'}),
             'cometarios': forms.TextInput(attrs={'class':'form-control'}),
         }
 
 # Formulario asociado a la clase Empleado
-class EmpleadoForm(ModelForm):
+class FormEmpleado(ModelForm):
     class Meta:
         model = Empleado
         fields = '__all__'
@@ -52,31 +52,6 @@ class EmpleadoForm(ModelForm):
             'telefono': forms.NumberInput(attrs={'class':'form-control'}),
         }
 
-# Formulario asociado a la clase NivelUrgencia
-class NivelUrgencia(ModelForm):
-    class Meta:
-        model = NivelUrgencia
-        fields = '__all__'
-        widgets = {
-            'nombre': forms.TextInput(attrs={'class':'form-control'}),
-        }
 
-     # Formulario asociado a la clase TipoTicket
-class NivelUrgencia(ModelForm):
-    class Meta:
-        model = TipoTicket
-        fields = '__all__'
-        widgets = {
-            'nombre': forms.TextInput(attrs={'class':'form-control'}),
-        }
-
-        # Formulario asociado a la clase EstadoTicket
-class NivelUrgencia(ModelForm):
-    class Meta:
-        model = EstadoTicket
-        fields = '__all__'
-        widgets = {
-            'nombre': forms.TextInput(attrs={'class':'form-control'}),
-        }
 
     
