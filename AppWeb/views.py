@@ -23,7 +23,6 @@ class CrearEmpleado(CreateView):
     form_class = FormEmpleado
     template_name = 'creaEmpleado.html'
     queryset = Empleado
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados/'
     
 #Vistas para los formularios
 def post_form(request):
