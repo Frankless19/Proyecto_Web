@@ -1,0 +1,24 @@
+{% extends "homeTickets.html" %}
+{% load static %}
+
+{% block contenido %}
+<div class="contenido">
+    <h1>Lista de Tickets:</h1>
+    <div id="mas">
+        <a href="http://127.0.0.1:8000/AppWeb/creaTicket/"><img class="crear" src="{% static 'images/ticket.png' %}" width="50px" title="Crear ticket nuevo"></a>        
+    </div>
+    {% if object_list %}
+        {% for ti in object_list %}
+        <ul>
+            <div>
+                <p>Numero de referencia: {{ti.nref}}</p><br>
+                <p>Titulo:</p>{{ti.titulo}}</p><br>
+                <p>Descripcion:</p> {{ ti.descripcion }}<br>
+            </div>
+        </ul>
+        {% endfor %}
+    {% else %}
+        <h1>No hay tickets disponibles</h1>
+    {% endif %}
+</div>
+{% endblock %}
