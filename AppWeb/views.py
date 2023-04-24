@@ -25,6 +25,12 @@ class CrearEmpleado(CreateView):
     template_name = 'creaEmpleado.html'
     queryset = Empleado
 
+class CrearEquipo(CreateView):
+    form_class = FormEquipo
+    template_name = 'creaEquipo.html'
+    queryset = Equipo
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+
 #Vistas para borrar
 class BorrarEmpleado(DeleteView):
     template_name = 'borrarEmpleado.html'
@@ -38,7 +44,7 @@ def post_form(request):
     dni = request.POST["dni"]
     email = request.POST["email"]
     telefono = request.POST["telefono"]   
-    return HttpResponse(f"Se ha registrado a {nombre} {apellido} con DNI {dni}")    
+    return HttpResponse(f"Se ha registrado a {nombre} {apellido} con DNI {dni}")  
 
 #Vistas para mostrar en detalle
 
