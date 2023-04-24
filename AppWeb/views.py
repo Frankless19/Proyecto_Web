@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from .models import Empleado, Equipo, Ticket
@@ -48,8 +48,8 @@ def post_form(request):
 
 #Vistas para mostrar en detalle
 
-#def show_empleado(request, empleado_id):
-#    empleado = get_object_or_404(Empleado, pk=empleado_id)
-#    context = {'empleado': empleado}
-#    return render(request, 'detalleEmpleado.html', context)
+def show_empleado(request, empleado_id):
+    empleado = get_object_or_404(Empleado, pk=empleado_id)
+    context = {'empleado': empleado}
+    return render(request, 'detalleEmpleado.html', context)
 

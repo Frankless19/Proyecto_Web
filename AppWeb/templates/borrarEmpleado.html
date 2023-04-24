@@ -5,8 +5,8 @@
 <div class="contenido">
 <form method="POST">
     {% csrf_token %}
-    <h4>¿Desea dar de baja el registro seleccionado?</h4>
-    <button class='' type="submit">Si, eliminar registro</button>
+    <h4>¿Desea dar de baja al empleado seleccionado?</h4>
+    <button class='' type="submit">Si</button>
     <button class='' type="submit"><a href="{% url 'gestion:listado-empleado' %}">No</a></button>
 </form>
 </div>

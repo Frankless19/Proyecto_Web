@@ -25,8 +25,6 @@
     <p>No existe este empleado.</p>
     {% endif %}
 
-    <a href="{% url 'gestion:listado-empleado' %}"><img class=""
-            src="{% static 'images/atras.png' %}"
-            title="Pulsa para volver a la página anterior"></a>
+    <a href="{% url 'gestion:listado-empleado' %}"><img class="" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
 </div>
 {% endblock %}
