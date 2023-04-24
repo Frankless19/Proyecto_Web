@@ -14,6 +14,8 @@
                 <p>ID Empleado: {{emp.id}}</p><br>
                 <p>Nombre y apellidos:</p>{{emp.nombre}} {{emp.apellidos}}</p><br>
                 <p>DNI:</p> {{ emp.dni }}<br>
+                <a href="{% url 'gestion:detalle-empleado' emp.id}"><img src="{% static 'images/info.png'}" title="Haz clic para ver al empleado en detalle"></a>
+                <a href="http://127.0.0.1:8000/AppWeb/borrarEmpleado/<int:pk>/"><img src="{% static 'images/delete.png'}" title="Haz clic para eliminar al empleado"></a>
             </div>
         </ul>
         {% endfor %}

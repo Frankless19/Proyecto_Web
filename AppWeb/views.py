@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from .models import Empleado, Equipo, Ticket
@@ -23,7 +24,13 @@ class CrearEmpleado(CreateView):
     form_class = FormEmpleado
     template_name = 'creaEmpleado.html'
     queryset = Empleado
-    
+
+#Vistas para borrar
+class BorrarEmpleado(DeleteView):
+    template_name = 'borrarEmpleado.html'
+    model = Empleado
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+
 #Vistas para los formularios
 def post_form(request):
     nombre = request.POST["nombre"]
@@ -32,4 +39,11 @@ def post_form(request):
     email = request.POST["email"]
     telefono = request.POST["telefono"]   
     return HttpResponse(f"Se ha registrado a {nombre} {apellido} con DNI {dni}")    
-    
+
+#Vistas para mostrar en detalle
+
+#def show_empleado(request, empleado_id):
+#    empleado = get_object_or_404(Empleado, pk=empleado_id)
+#    context = {'empleado': empleado}
+#    return render(request, 'detalleEmpleado.html', context)
+

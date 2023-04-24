@@ -1,0 +1,32 @@
+{% extends "homeEmpleados.html" %}
+{% load static %}
+
+{% block contenido %}
+{% if empleado %}
+<div class="contenido"> 
+    <h2>Aqui estan los datos del empleado {{empleado.id}}</h2>
+
+    <ul>
+        <li>
+            <p>Nombre y Apellidos: {{empleado.nombre}} {{empleado.apellidos}} </p>
+        </li>
+        <li>
+            <p>DNI: {{ empleado.dni}}</p>
+        </li>
+        <li>
+            <p>Telefono: {{ empleado.telefono}}</p>
+        </li>
+        <li>
+            <p>Email: {{ empleado.email}}</p>
+        </li>
+    </ul>
+
+    {% else %}
+    <p>No existe este empleado.</p>
+    {% endif %}
+
+    <a href="{% url 'gestion:listado-empleado' %}"><img class=""
+            src="{% static 'images/atras.png' %}"
+            title="Pulsa para volver a la página anterior"></a>
+</div>
+{% endblock %}

@@ -31,7 +31,7 @@ class FormTicket(ModelForm):
             'descripcion': forms.TextInput(attrs={'class':'form-control'}),
             'fechaApertura': forms.DateTimeInput(attrs={'class':'form-control'}),
             'fechaResolucion': forms.DateTimeInput(attrs={'class':'form-control'}),
-            #'nivelUrgencia': forms.ChoiceField(attrs={'class':'form-control'}),
+            #'nivelUrgencia': forms.ModelChoiceField(attrs={'class':'form-control'}),
             #'tipo': forms.ChoiceField(attrs={'class':'form-control'}),
             #'estado': forms.ChoiceField(attrs={'class':'form-control'}),
             #'empleado': forms.ChoiceField(attrs={'class':'form-control'}),
