@@ -31,6 +31,12 @@ class CrearEquipo(CreateView):
     queryset = Equipo
     success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
 
+class CrearTicket(CreateView):
+    form_class = FormTicket
+    template_name = 'creaTicket.html'
+    queryset = Ticket
+    success_url = 'http://127.0.0.1:8000/appWeb/listadoTickets'
+
 #Vistas para borrar
 class BorrarEmpleado(DeleteView):
     template_name = 'borrarEmpleado.html'

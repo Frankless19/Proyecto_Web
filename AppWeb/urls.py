@@ -13,9 +13,12 @@ urlpatterns = [
     
     path('AppWeb/creaEmpleado/',CrearEmpleado.as_view(), name='crear-empleado'),
     path('AppWeb/creaEquipo/',CrearEquipo.as_view(), name='crear-equipo'),
+    path('AppWeb/creaEquipo/',CrearEquipo.as_view(), name='crear-ticket'),
     
     path('AppWeb/borrarEmpleado/<int:pk>/',BorrarEmpleado.as_view(), name='borrar-empleado'),
     
-    path('AppWeb/listadoEmpleados/<int:empleado_id>',views.show_empleado(), name='detalle-empleado'),
+    path('appGestionProduccion/registrado/',views.post_form, name='ticket-registrado' ),
+
+    #path('AppWeb/listadoEmpleados/<int:empleado_id>',views.show_empleado(), name='detalle-empleado'),
     
 ]
