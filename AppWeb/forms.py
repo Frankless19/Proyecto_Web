@@ -35,10 +35,28 @@ class FormTicket(forms.ModelForm):
             #'nivelUrgencia' : forms.ModelChoiceField(queryset=NivelUrgencia.objects.all(), widget=forms.Select),
             #'tipo': forms.ChoiceField(attrs={'class':'form-control'}),
             #'estado': forms.ChoiceField(attrs={'class':'form-control'}),
-            #'empleado': forms.ChoiceField(attrs={'class':'form-control'}),
+            'empleado': forms.TextInput(attrs={'class':'form-control'}),
             #'equipo': forms.ChoiceField(attrs={'class':'form-control'}),
-            'cometarios': forms.TextInput(attrs={'class':'form-control'}),
+            'nivelUrgencia': forms.ChoiceField(choices=((1,("Alta")),
+                                        (2,("Media")),
+                                        (3,("Baja"))),
+                                default=3),
+            
+            'tipo': forms.ChoiceField(choices=((1,("Averia")),
+                                        (2,("Mejora")),
+                                        (3,("Mantenimiento"))),
+                                default=3),
+
+            'estado': forms.ChoiceField(choices=((1,("Abierto")),
+                                        (2,("Cerrado"))),
+                                default=1),  
+
+            'equipo': forms.ChoiceField(choices=((1,("Equipo1")),
+                                        (2,("Equipo2")),
+                                        (3,("Equipo3"))),
+                                default=1),
         }
+
 
 # Formulario asociado a la clase Empleado
 class FormEmpleado(ModelForm):
