@@ -3,7 +3,7 @@ from django import forms
 from .models import Ticket, Empleado, Equipo
 
 # Formulario asociado a la clase Equipo
-class FormEquipo(ModelForm):
+class FormEquipo(forms.ModelForm):
     class Meta:
         model = Equipo
         fields = '__all__'
@@ -21,7 +21,7 @@ class FormEquipo(ModelForm):
         }
 
 # Formulario asociado a la clase Ticket
-class FormTicket(ModelForm):
+class FormTicket(forms.ModelForm):
     class Meta:
         model = Ticket
         fields = '__all__'
