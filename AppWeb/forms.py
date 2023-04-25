@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Ticket, Empleado, Equipo
+from .models import Ticket, Empleado, Equipo, NivelUrgencia
+
 
 # Formulario asociado a la clase Equipo
 class FormEquipo(forms.ModelForm):
@@ -31,7 +32,7 @@ class FormTicket(forms.ModelForm):
             'descripcion': forms.TextInput(attrs={'class':'form-control'}),
             'fechaApertura': forms.DateTimeInput(attrs={'class':'form-control'}),
             'fechaResolucion': forms.DateTimeInput(attrs={'class':'form-control'}),
-            #'nivelUrgencia': forms.ModelChoiceField(attrs={'class':'form-control'}),
+            #'nivelUrgencia' : forms.ModelChoiceField(queryset=NivelUrgencia.objects.all(), widget=forms.Select),
             #'tipo': forms.ChoiceField(attrs={'class':'form-control'}),
             #'estado': forms.ChoiceField(attrs={'class':'form-control'}),
             #'empleado': forms.ChoiceField(attrs={'class':'form-control'}),

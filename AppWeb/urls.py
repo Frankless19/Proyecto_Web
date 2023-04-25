@@ -17,7 +17,7 @@ urlpatterns = [
     
     path('AppWeb/borrarEmpleado/<int:pk>/',BorrarEmpleado.as_view(), name='borrar-empleado'),
     
-    path('AppWeb/registrado/',views.post_form, name='empleado-registrado' ),
+    path('AppWeb/registrado/',views.post_form, name='empleado-registrado'),
 
     #path('AppWeb/listadoEmpleados/<int:empleado_id>',views.show_empleado(), name='detalle-empleado'),
     
