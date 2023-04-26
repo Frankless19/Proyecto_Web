@@ -14,7 +14,9 @@
                 <p>ID Empleado: {{emp.id}}</p><br>
                 <p>Nombre y apellidos:</p>{{emp.nombre}} {{emp.apellidos}}</p><br>
                 <p>DNI:</p> {{ emp.dni }}<br>
-                <a href="{% url 'gestion:borrar-empleado' emp.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al empleado"></a>
+                <a href="{% url 'gestion:detalle-empleado' emp.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del empleado" width="50px"></a>
+                <a href="{% url 'gestion:borrar-empleado' emp.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al empleado" width="50px"></a>
+                <a href="{% url 'gestion:modificar-empleado' emp.id %}"><img src="{% static 'images/editar.png' %}" title="Haz clic para editar este empleado" width="50px" ></a>
             </div>
         </ul>
         {% endfor %}

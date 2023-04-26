@@ -1,0 +1,13 @@
+{% extends "homeTickets.html" %}
+{% load static %}
+
+{% block contenido %}
+<div class="contenido">
+<form method="POST">
+    {% csrf_token %}
+    <h4>¿Desea dar de baja el ticket seleccionado?</h4>
+    <button class='' type="submit">Si</button>
+    <button class='' type="submit"><a href="{% url 'gestion:listado-ticket' %}">No</a></button>
+</form>
+</div>
+{% endblock %}

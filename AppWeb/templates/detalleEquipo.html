@@ -1,0 +1,42 @@
+{% extends "homeEquipos.html" %}
+{% load static %}
+
+{% block contenido %}
+{% if equipo %}
+<div class="contenido"> 
+    <h2>Aqui estan los datos del equipo {{equipo.id}}</h2>
+
+    <ul>
+        <li>
+            <p>Numero de serie:{{equipo.nserie}} </p>
+        </li>
+        <li>
+            <p>Modelo: {{equipo.modelo}}</p>
+        </li>
+        <li>
+            <p>Marca: {{equipo.marca}}</p>
+        </li>
+        <li>
+            <p>Tipo: {{equipo.tipo}}</p>
+        </li>
+        <li>
+            <p>Fecha de Adquisicion: {{equipo.fechaAdquisicion}} </p>
+        </li>
+        <li>
+            <p>Fecha de puesta en marcha: {{equipo.fechaPuestaMarcha}} </p>
+        </li>
+        <li>
+            <p>Nombre y telefono del proovedor: {{equipo.provNombre}} . {{equipo.provTelefono}}</p>
+        </li>
+        <li>
+            <p>Planta: {{equipo.planta}}</p>
+        </li>
+    </ul>
+
+    {% else %}
+    <p>No existe el equipo seleccionado.</p>
+    {% endif %}
+
+    <a href="{% url 'gestion:listado-equipo' %}"><img class="" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
+</div>
+{% endblock %}

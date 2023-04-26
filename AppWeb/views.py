@@ -42,6 +42,30 @@ class BorrarEmpleado(DeleteView):
     template_name = 'borrarEmpleado.html'
     model = Empleado
     success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+    
+class BorrarEquipo(DeleteView):
+    template_name = 'borrarEquipo.html'
+    model = Equipo
+    success_url  = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    
+class BorrarTicket(DeleteView):
+    template_name = 'borrarTicket.html'
+    model = Ticket
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
+    
+#Vistas para modificar
+class ModificarEmpleado(UpdateView):
+    form_class = FormEmpleado
+    template_name = 'creaEmpleado.html'
+    model = Empleado
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+
+class ModificarEquipo(UpdateView):
+    form_class = FormEquipo
+    template_name = 'creaEquipo.html'
+    model = Equipo
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    
 
 #Vistas para los formularios
 def post_form(request):
@@ -58,4 +82,11 @@ def show_empleado(request, empleado_id):
     empleado = get_object_or_404(Empleado, pk=empleado_id)
     context = {'empleado': empleado}
     return render(request, 'detalleEmpleado.html', context)
+
+def show_equipo(request, equipo_id):
+    equipo = get_object_or_404(Equipo, pk=equipo_id)
+    context = {'equipo': equipo}
+    return render(request, 'detalleEquipo.html', context)
+
+
 

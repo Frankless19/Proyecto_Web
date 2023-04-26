@@ -14,6 +14,9 @@
                 <p>Numero de serie:{{eq.nserie}}</p><br>
                 <p>Modelo:</p>{{eq.modelo}}</p><br>
                 <p>Marca:</p> {{eq.marca}}<br>
+                <a href="{% url 'gestion:detalle-equipo' eq.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del equipo" width="50px"></a>
+                <a href="{% url 'gestion:borrar-equipo' eq.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar el equipo" width="50px"></a>
+                <a href="{% url 'gestion:modificar-equipo' eq.id %}"><img src="{% static 'images/editar.png' %}" title="Haz clic para editar este equipo"  width="50px" ></a>
             </div>
         </ul>
         {% endfor %}
