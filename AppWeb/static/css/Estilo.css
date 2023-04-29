@@ -17,10 +17,9 @@ nav {
     border-bottom: 5px solid black;
     width: 100%;
     height: 50px;
-    background: rgba(14, 66, 209, 0.767);
+    background: rgb(14, 66, 209);
     position: sticky;
     top: 0;
-    z-index: 9999;
 }
 
 nav ul {
@@ -55,7 +54,7 @@ nav ul li a.active {
     border: 3px solid;
     border-color: rgb(32, 23, 165);
     background-color: rgb(245, 245, 237);
-    border-top-color: rgb(32, 23, 165);
+    border-top-color: rgb(26, 20, 112);
     border-bottom-color: rgb(32, 23, 165);
     border-left-color:rgb(53, 118, 172);
     border-right-color:rgb(53, 118, 172);
@@ -64,4 +63,36 @@ nav ul li a.active {
 .enlaces {
     display: flex;
     align-items: right;
+}
+
+/*Estilos del footer*/
+
+footer {
+    background-color: #333;
+    color: #fff;
+  }
+  
+.piePagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+  
+#proteccion {
+    font-size: 0.8rem;
+}
+  
+.logoInferior {
+    width: 25px;
+    height: 25px;
+    margin-right: 0.5rem;
+}
+
+#logo_admin{
+    width: 100px;
+}
+
+#otros {
+    list-style: none;
 }
