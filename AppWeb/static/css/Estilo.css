@@ -96,3 +96,73 @@ footer {
 #otros {
     list-style: none;
 }
+
+/*Estilos paginas de borrado*/
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+button {
+    background-color: #0077cc;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+  
+button.si:hover {
+    background-color: #ff0d0d;
+}
+  
+button.no:hover {
+    background-color: #ddd;
+    color: #333;
+    border: 1px solid #aaa;
+    text-decoration: none;
+}
+  
+.volver {
+    color: inherit;
+    text-decoration: none;
+}
+  
+a.volver:hover {
+    text-decoration:dashed;
+}
+
+/*Estilos paginas de detalles*/
+
+/*Estilos paginas de listado*/
+
+/*Estilos paginas de creacion y edicion*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button.Guardar:hover {
+    background-color: #11f524;
+    color: #333333;
+    border: 1px solid #aaa;
+    text-decoration: none;
+}
+
+.atras{
+    width: 180px;
+    margin-left: 45%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
