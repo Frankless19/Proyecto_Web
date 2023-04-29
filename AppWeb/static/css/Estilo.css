@@ -1,0 +1,67 @@
+/*Estilos del encabezado y logo*/
+
+header {
+    background: black;
+    border-bottom: 5px solid rgba(14, 66, 209, 0.767);
+}
+
+#logo {
+    width: 12%;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+/*Estilos para la navegacion*/
+
+nav {
+    border-bottom: 5px solid black;
+    width: 100%;
+    height: 50px;
+    background: rgba(14, 66, 209, 0.767);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+nav ul {
+    display: flex;
+    justify-content:right;
+    margin: 0%;
+    margin-bottom: 0px;
+}
+
+nav ul li {
+    list-style: none;
+    margin-bottom: 0px;
+
+
+}
+
+nav ul li a {
+    font-family: cursive;
+    display: block;
+    margin-right: 15px;
+    padding: 0 40px;
+    text-decoration:wavy;
+    text-transform:uppercase;
+    line-height:45px;
+    margin-bottom: 0px;
+    color: black;
+    
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    border: 3px solid;
+    border-color: rgb(32, 23, 165);
+    background-color: rgb(245, 245, 237);
+    border-top-color: rgb(32, 23, 165);
+    border-bottom-color: rgb(32, 23, 165);
+    border-left-color:rgb(53, 118, 172);
+    border-right-color:rgb(53, 118, 172);
+}
+
+.enlaces {
+    display: flex;
+    align-items: right;
+}
