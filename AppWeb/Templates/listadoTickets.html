@@ -5,7 +5,7 @@
 <div class="contenido">
     <h1>Lista de tickets:</h1>
     <div id="mas">
-        <a href="http://127.0.0.1:8000/AppWeb/creaTicket/"><img class="crear" src="{% static 'images/mas.png' %}" width="50px" title="Crear ticket nuevo"></a>        
+        <a href="http://127.0.0.1:8000/AppWeb/creaTicket/"><img class="crear" src="{% static 'images/mas2.gif' %}" width="100px" title="Crear ticket nuevo"></a>        
     </div>
     {% if object_list %}
         {% for ti in object_list %}
@@ -14,7 +14,9 @@
                 <b>Numero de referencia: </b><p>{{ti.nref}}</p><br>
                 <b>Titulo:</b><p>{{ti.titulo}}</p><br>
                 <b>Descripcion:</b><p>{{ti.descripcion}}</p><br>
-                <a href="{% url 'gestion:borrar-ticket' ti.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar el ticket" width="50px"></a>
+                <a href="{% url 'gestion:detalle-ticket' ti.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del ticket" width="50px"></a>
+                <a href="{% url 'gestion:borrar-ticket' ti.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al ticket" width="50px"></a>
+                <a href="{% url 'gestion:modificar-ticket' ti.id %}"><img src="{% static 'images/editar.png' %}" title="Haz clic para editar este ticket" width="50px" ></a>
             </div>
         </ul>
         {% endfor %}

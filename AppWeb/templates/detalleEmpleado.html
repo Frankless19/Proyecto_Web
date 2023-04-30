@@ -6,7 +6,7 @@
 <div class="contenido"> 
     <h2>Aqui estan los datos del empleado {{empleado.id}}</h2>
 
-    <ul>
+    <ul class="detalles">
         <li>
             <p>Nombre y Apellidos: {{empleado.nombre}} {{empleado.apellidos}} </p>
         </li>
@@ -25,6 +25,6 @@
     <p>No existe este empleado.</p>
     {% endif %}
 
-    <a href="{% url 'gestion:listado-empleado' %}"><img class="" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
+    <a href="{% url 'gestion:listado-empleado' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
 </div>
 {% endblock %}

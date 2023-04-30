@@ -30,7 +30,7 @@ class Ticket(models.Model):
     estado = models.ForeignKey('EstadoTicket', on_delete=models.CASCADE) # relación one-to-many para seleccionar el estado del ticket
     empleado = models.ForeignKey('Empleado', on_delete=models.CASCADE, default="") # relación one-to-many, un ticket solo es atendido por un empleado
     equipo = models.ForeignKey('Equipo', on_delete=models.CASCADE, default="") # relación one-to-many, un ticket solo puede tener un equipo
-    cometarios = models.CharField(max_length = 40)
+    comentarios = models.CharField(max_length = 40)
     
     #Devuelve un string con la referencia, el titulo, y la descripcion de cada Equipo creado.
     def __str__(self):

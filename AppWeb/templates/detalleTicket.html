@@ -1,0 +1,51 @@
+{% extends "homeEquipos.html" %}
+{% load static %}
+
+{% block contenido %}
+{% if ticket %}
+<div class="contenido"> 
+    <h2>Aqui estan los datos del ticket {{ticket.id}}</h2>
+
+    <ul class="detalles">
+        <li>
+            <p>Numero de referencia: {{ticket.nref}} </p>
+        </li>
+        <li>
+            <p>Titulo: {{ticket.titulo}}</p>
+        </li>
+        <li>
+            <p>Descripcion: {{ticket.descripcion}}</p>
+        </li>
+        <li>
+            <p>Fecha de apertura: {{ticket.fechaApertura}}</p>
+        </li>
+        <li>
+            <p>Fecha de resolucion: {{ticket.fechaResolucion}} </p>
+        </li>
+        <li>
+            <p>Nivel de urgencia: {{ticket.nivelUrgencia}} </p>
+        </li>
+        <li>
+            <p>{{ticket.tipo}}</p>
+        </li>
+        <li>
+            <p>{{ticket.estado}}</p>
+        </li>
+        <li>
+            <p>Empleado: {{ticket.empleado}}</p>
+        </li>
+        <li>
+            <p>{{ticket.equipo}}</p>
+        </li>
+        <li>
+            <p>Comentarios: {{ticket.comentarios}}</p>
+        </li>
+    </ul>
+
+    {% else %}
+    <p>No existe el ticket seleccionado.</p>
+    {% endif %}
+
+    <a href="{% url 'gestion:listado-ticket' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
+</div>
+{% endblock %}

@@ -24,6 +24,7 @@ class CrearEmpleado(CreateView):
     form_class = FormEmpleado
     template_name = 'creaEmpleado.html'
     queryset = Empleado
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
 
 class CrearEquipo(CreateView):
     form_class = FormEquipo
@@ -65,7 +66,12 @@ class ModificarEquipo(UpdateView):
     template_name = 'creaEquipo.html'
     model = Equipo
     success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
-    
+
+class ModificarTicket(UpdateView):
+    form_class = FormTicket
+    template_name = 'creaTicket.html'
+    model = Ticket
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
 
 #Vistas para los formularios
 def post_form(request):
@@ -87,6 +93,11 @@ def show_equipo(request, equipo_id):
     equipo = get_object_or_404(Equipo, pk=equipo_id)
     context = {'equipo': equipo}
     return render(request, 'detalleEquipo.html', context)
+
+def show_ticket(request, ticket_id):
+    ticket = get_object_or_404(Ticket, pk=ticket_id)
+    context = {'ticket': ticket}
+    return render(request, 'detalleTicket.html', context)
 
 
 

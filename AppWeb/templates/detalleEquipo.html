@@ -6,7 +6,7 @@
 <div class="contenido"> 
     <h2>Aqui estan los datos del equipo {{equipo.id}}</h2>
 
-    <ul>
+    <ul class="detalles">
         <li>
             <p>Numero de serie:{{equipo.nserie}} </p>
         </li>
@@ -37,6 +37,6 @@
     <p>No existe el equipo seleccionado.</p>
     {% endif %}
 
-    <a href="{% url 'gestion:listado-equipo' %}"><img class="" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
+    <a href="{% url 'gestion:listado-equipo' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
 </div>
 {% endblock %}
