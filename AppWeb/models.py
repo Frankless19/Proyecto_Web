@@ -37,8 +37,6 @@ class Ticket(models.Model):
         return f" Referencia: {self.nref}. Titulo: {self.titulo}. Descripcion: {self.descripcion}"
 
 # Creacion de la clase Empleado
-
-
 class Empleado(models.Model):
     dni = models.CharField(max_length=9)
     nombre = models.CharField(max_length=15)

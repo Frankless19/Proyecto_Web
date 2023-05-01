@@ -36,7 +36,7 @@ class CrearTicket(CreateView):
     form_class = FormTicket
     template_name = 'creaTicket.html'
     queryset = Ticket
-    success_url = 'http://127.0.0.1:8000/appWeb/listadoTickets'
+    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
 
 #Vistas para borrar
 class BorrarEmpleado(DeleteView):
