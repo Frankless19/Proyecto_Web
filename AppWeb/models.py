@@ -3,7 +3,7 @@ from django.db import models
 # Creacion de la clase equipo
 
 class Equipo(models.Model):
-    nserie = models.CharField(max_length=20)
+    nserie = models.CharField(max_length=20, unique=True)
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=30)
     tipo = models.CharField(max_length=20)
@@ -20,7 +20,7 @@ class Equipo(models.Model):
 
 # Creacion de la clase Ticket
 class Ticket(models.Model):
-    nref = models.CharField(max_length = 20)
+    nref = models.CharField(max_length = 20, unique=True)
     titulo = models.CharField(max_length = 10)
     descripcion = models.CharField(max_length = 50)
     fechaApertura = models.DateField()
@@ -38,7 +38,7 @@ class Ticket(models.Model):
 
 # Creacion de la clase Empleado
 class Empleado(models.Model):
-    dni = models.CharField(max_length=9)
+    dni = models.CharField(max_length=9, unique=True)
     nombre = models.CharField(max_length=15)
     apellidos = models.CharField(max_length=25)
     email = models.CharField(max_length=30)
