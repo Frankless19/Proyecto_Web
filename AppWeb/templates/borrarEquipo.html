@@ -7,7 +7,7 @@
     {% csrf_token %}
     <h4>¿Desea dar de baja el equipo seleccionado?</h4>
     <button class='si' type="submit">Si</button>
-    <button class='no' type="button"><a href="{% url 'gestion:listado-equipo' %}" class="volver">No</a></button>
+    <a href="{% url 'gestion:listado-equipo' %}" class=" botonno no" >No</a>
 </form>
 </div>
 {% endblock %}

@@ -116,6 +116,19 @@ button {
     transition: all 0.3s ease;
 }
 
+.botonno {
+    background-color: #0077cc;
+    text-decoration: none;
+    color: #fff;
+    margin:10px;
+    font-size: 18px;
+    padding: 11px 15px 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 button.si:hover {
     background-color: #ff0d0d;
 }

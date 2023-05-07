@@ -7,7 +7,7 @@
     {% csrf_token %}
     <h4>¿Desea dar de baja al empleado seleccionado?</h4>
     <button class='si' type="submit">Si</button>
-    <button class='no' type="button" id="margen"><a href="{% url 'gestion:listado-empleado' %}" class="volver">No</a></button>
+    <a href="{% url 'gestion:listado-empleado' %}" class=" botonno no" >No</a>
 </form>
 </div>
 {% endblock %}
