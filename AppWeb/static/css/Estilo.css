@@ -213,3 +213,25 @@ a{
     color: white;
     text-decoration: none;
 }
+
+/*Estilos extra de js*/
+
+#zoom{
+    margin-right: 1500px;
+    margin-top: 3px;
+    position: absolute;
+}
+
+.tamaño{
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    padding: 5px 15px;
+    text-align: center;
+    margin-top: 0;
+} 
+
+.tamaño:hover{
+    background: #007bff;
+    color: white;
+}
