@@ -27,5 +27,6 @@ urlpatterns = [
     path('AppWeb/listadoEquipos/<int:equipo_id>',views.show_equipo, name='detalle-equipo'),
     path('AppWeb/listadoTickets/<int:ticket_id>',views.show_ticket, name='detalle-ticket'),
     
-    path('AppWeb/registrado/',views.post_form, name='empleado-registrado'),
+    path('', views.loginPage, name="login"),
+    
 ]

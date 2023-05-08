@@ -5,6 +5,9 @@ from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from .models import Empleado, Equipo, Ticket
 from .forms import FormEmpleado, FormTicket, FormEquipo
 from http.client import HTTPResponse
+from django.contrib.auth import authenticate,login
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
 #Vistas para listar
 class ListaEmpleado(ListView):
@@ -99,5 +102,18 @@ def show_ticket(request, ticket_id):
     context = {'ticket': ticket}
     return render(request, 'detalleTicket.html', context)
 
+#Vista de login
+def loginPage(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-
+        user = authenticate(request, username=username, password=password)
+    
+        if user is not None:
+            login (request,user)
+            return redirect('/AppWeb/listadoEmpleados')
+        else:
+            messages.info(request, 'Usuario o contraseña incorrectos')
+    context = {}
+    return render(request, 'login.html', context)
