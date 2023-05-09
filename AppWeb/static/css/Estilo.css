@@ -216,10 +216,20 @@ a{
 
 /*Estilos extra de js*/
 
+#logadmin {
+    color: black;
+    }
+
 #zoom{
+    display: inline-flex;
     margin-right: 1500px;
     margin-top: 3px;
     position: absolute;
+}
+
+#botondcha{
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 .tamaño{
