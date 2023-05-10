@@ -4,20 +4,20 @@
 {% block contenido %}
 {% if empleado %}
 <div class="contenido"> 
-    <h2>Aqui estan los datos del empleado {{empleado.id}}</h2>
+    <h2>DETALLES DEL EMPLEADO {{empleado.id}}</h2>
 
     <ul class="detalles">
         <li>
-            <p>Nombre y Apellidos: {{empleado.nombre}} {{empleado.apellidos}} </p>
+            <p><b>Nombre y Apellidos: </b>{{empleado.nombre}} {{empleado.apellidos}} </p>
         </li>
         <li>
-            <p>DNI: {{empleado.dni}}</p>
+            <p><b>DNI: </b>{{empleado.dni}}</p>
         </li>
         <li>
-            <p>Telefono: {{empleado.telefono}}</p>
+            <p><b>Telefono: </b>{{empleado.telefono}}</p>
         </li>
         <li>
-            <p>Email: {{empleado.email}}</p>
+            <p><b>Email: </b>{{empleado.email}}</p>
         </li>
     </ul>
 

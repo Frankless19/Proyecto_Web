@@ -4,32 +4,32 @@
 {% block contenido %}
 {% if equipo %}
 <div class="contenido"> 
-    <h2>Aqui estan los datos del equipo {{equipo.id}}</h2>
+    <h2>DETALLES DEL EQUIPO {{equipo.id}}</h2>
 
     <ul class="detalles">
         <li>
-            <p>Numero de serie:{{equipo.nserie}} </p>
+            <p><b>Numero de serie: </b>{{equipo.nserie}} </p>
         </li>
         <li>
-            <p>Modelo: {{equipo.modelo}}</p>
+            <p><b>Modelo: </b>{{equipo.modelo}}</p>
         </li>
         <li>
-            <p>Marca: {{equipo.marca}}</p>
+            <p><b>Marca: </b>{{equipo.marca}}</p>
         </li>
         <li>
-            <p>Tipo: {{equipo.tipo}}</p>
+            <p><b>Tipo: </b>{{equipo.tipo}}</p>
         </li>
         <li>
-            <p>Fecha de Adquisicion: {{equipo.fechaAdquisicion}} </p>
+            <p><b>Fecha de Adquisicion: </b>{{equipo.fechaAdquisicion}} </p>
         </li>
         <li>
-            <p>Fecha de puesta en marcha: {{equipo.fechaPuestaMarcha}} </p>
+            <p><b>Fecha de puesta en marcha: </b>{{equipo.fechaPuestaMarcha}} </p>
         </li>
         <li>
-            <p>Nombre y telefono del proovedor: {{equipo.provNombre}} . {{equipo.provTelefono}}</p>
+            <p><b>Nombre y telefono del proovedor: </b>{{equipo.provNombre}} . {{equipo.provTelefono}}</p>
         </li>
         <li>
-            <p>Planta: {{equipo.planta}}</p>
+            <p><b>Planta: </b>{{equipo.planta}}</p>
         </li>
     </ul>
 
