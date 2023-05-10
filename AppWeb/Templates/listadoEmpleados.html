@@ -3,20 +3,23 @@
 
 {% block contenido %}
 <div class="contenido">
-    <h1>Lista de empleados:</h1>
+    
     <div id="mas">
-        <a href="{% url 'gestion:crear-empleado' %}"><img class="crear" src="{% static 'images/mas2.gif' %}" width="100px" title="Crear un empleado nuevo"></a>        
+        <p><b>Alta empleado</b></p>
+        <a href="{% url 'gestion:crear-empleado' %}"><img class="centrado" src="{% static 'images/añadirusr.png' %}" width="70px" title="Crear un empleado nuevo"></a>        
     </div>
+    <h1>LISTA DE EMPLEADOS:</h1>
+
     {% if object_list %}
         {% for emp in object_list %}
         <ul>
             <div class="objetos">
-                <b>ID Empleado: </b><p>{{emp.id}}</p><br>
-                <b>Nombre y apellidos:</b><p>{{emp.nombre}} {{emp.apellidos}}</p><br>
-                <b>DNI:</b><p>{{ emp.dni }}</p><br>
-                <a href="{% url 'gestion:detalle-empleado' emp.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del empleado" width="50px"></a>
-                <a href="{% url 'gestion:borrar-empleado' emp.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al empleado" width="50px"></a>
-                <a href="{% url 'gestion:modificar-empleado' emp.id %}"><img src="{% static 'images/editar.png' %}" title="Haz clic para editar este empleado" width="50px" ></a>
+                <span><b>ID Empleado: </b>{{emp.id}} </span> &emsp;&emsp;&emsp;
+                <span><b>Nombre y apellidos: </b>{{emp.nombre}} {{emp.apellidos}} </span> &emsp;&emsp;&emsp;
+                <span><b>DNI: </b>{{ emp.dni }} </span>
+                <a id="objetos1" href="{% url 'gestion:detalle-empleado' emp.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del empleado" width="50px" ></a>
+                <a id="objetos1" href="{% url 'gestion:borrar-empleado' emp.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al empleado" width="50px"></a>
+                <a id="objetos1" href="{% url 'gestion:modificar-empleado' emp.id %}"><img  src="{% static 'images/editar.png' %}" title="Haz clic para editar este empleado" width="50px" ></a>
             </div>
         </ul>
         {% endfor %}

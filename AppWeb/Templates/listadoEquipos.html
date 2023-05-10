@@ -3,20 +3,23 @@
 
 {% block contenido %}
 <div class="contenido">
-    <h1>Lista de equipos:</h1>
+
     <div id="mas">
-        <a href="{% url 'gestion:crear-equipo' %}"><img class="crear" src="{% static 'images/mas2.gif' %}" width="100px" title="Crear equipo nuevo"></a>        
+        <p><b>Alta equipo</b></p>
+        <a href="{% url 'gestion:crear-equipo' %}"><img class="crear" src="{% static 'images/añadirusr.png' %}" width="70px" title="Crear equipo nuevo"></a>        
     </div>
+    <h1>LISTA DE EQUIPOS</h1>
+
     {% if object_list %}
         {% for eq in object_list %}
         <ul>
             <div class="objetos">
-                <b>Numero de serie: </b><p>{{eq.nserie}}</p><br>
-                <b>Modelo: </b><p>{{eq.modelo}}</p><br>
-                <b>Marca: </b><p>{{eq.marca}}</p><br>
-                <a href="{% url 'gestion:detalle-equipo' eq.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del equipo" width="50px"></a>
-                <a href="{% url 'gestion:borrar-equipo' eq.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar el equipo" width="50px"></a>
-                <a href="{% url 'gestion:modificar-equipo' eq.id %}"><img src="{% static 'images/editar.png' %}" title="Haz clic para editar este equipo"  width="50px" ></a>
+                <span><b>Numero de serie: </b>{{eq.nserie}}</span> &emsp;&emsp;&emsp;
+                <span></span><b>Modelo: </b>{{eq.modelo}}</span> &emsp;&emsp;&emsp;
+                <span></span><b>Marca: </b>{{eq.marca}}</span>
+                <a id="objetos1" href="{% url 'gestion:detalle-equipo' eq.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del equipo" width="50px"></a>
+                <a id="objetos1" href="{% url 'gestion:borrar-equipo' eq.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar el equipo" width="50px"></a>
+                <a id="objetos1" href="{% url 'gestion:modificar-equipo' eq.id %}"><img src="{% static 'images/editar.png' %}" title="Haz clic para editar este equipo"  width="50px" ></a>
             </div>
         </ul>
         {% endfor %}

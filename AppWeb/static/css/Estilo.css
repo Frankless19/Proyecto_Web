@@ -1,30 +1,103 @@
-/*Estilos del encabezado y logo*/
-
-header {
-    background: black;
-    border-bottom: 5px solid rgba(14, 66, 209, 0.767);
+.navbar {
+    background-color: black;
+    padding: 0 2rem;
 }
 
-#logo {
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+
+}
+
+.nav-link {
+    font-family: sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 0.2rem;
+}
+
+.nav-link:hover {
+    background-color: black;
+    transition: all ease;
+}
+
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #C1BDB3;
+    transition: width .3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.logo {
+    width: 150px;
+    object-fit: contain;
+}
+
+
+header nav {
+    display: flex;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background-color: #f3ebdc;
+}
+
+#mas{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    max-width: 10%;
+    text-align: center;
+}
+
+/*Estilos del encabezado y logo*/
+
+/*header {
+    background: black;
+    border-bottom: 5px solid rgba(14, 66, 209, 0.767);
+}*/
+
+/*#logo {
     width: 12%;
     display: flex;
     margin-bottom: 15px;
-}
+}*/
 
 /*Estilos para la navegacion*/
 
-nav {
+/*nav {
     border-bottom: 5px solid black;
     width: 100%;
     height: 50px;
     background: rgb(14, 66, 209);
     position: sticky;
     top: 0;
-}
+}*/
 
 nav ul {
     display: flex;
-    justify-content:right;
+    justify-content: right;
     margin: 0%;
     margin-bottom: 0px;
 }
@@ -32,8 +105,6 @@ nav ul {
 nav ul li {
     list-style: none;
     margin-bottom: 0px;
-
-
 }
 
 nav ul li a {
@@ -41,24 +112,24 @@ nav ul li a {
     display: block;
     margin-right: 15px;
     padding: 0 40px;
-    text-decoration:wavy;
-    text-transform:uppercase;
-    line-height:45px;
+    text-decoration: wavy;
+    text-transform: uppercase;
+    line-height: 45px;
     margin-bottom: 0px;
     color: black;
-    
+
 }
 
-nav ul li a:hover,
+/*nav ul li a:hover,
 nav ul li a.active {
     border: 3px solid;
     border-color: rgb(32, 23, 165);
     background-color: rgb(245, 245, 237);
     border-top-color: rgb(26, 20, 112);
     border-bottom-color: rgb(32, 23, 165);
-    border-left-color:rgb(53, 118, 172);
-    border-right-color:rgb(53, 118, 172);
-}
+    border-left-color: rgb(53, 118, 172);
+    border-right-color: rgb(53, 118, 172);
+}*/
 
 .enlaces {
     display: flex;
@@ -70,26 +141,26 @@ nav ul li a.active {
 footer {
     background-color: #333;
     color: #fff;
-  }
-  
+}
+
 .piePagina {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
 }
-  
+
 #proteccion {
     font-size: 0.8rem;
 }
-  
+
 .logoInferior {
     width: 25px;
     height: 25px;
     margin-right: 0.5rem;
 }
 
-#logo_admin{
+#logo_admin {
     width: 100px;
 }
 
@@ -102,10 +173,10 @@ footer {
 h4 {
     font-size: 24px;
     margin-bottom: 20px;
-  }
-  
+}
+
 button {
-    background-color: #0077cc;
+    background-color: #005CA9;
     color: #fff;
     font-size: 18px;
     padding: 10px 20px;
@@ -117,10 +188,10 @@ button {
 }
 
 .botonno {
-    background-color: #0077cc;
+    background-color: #005CA9;
     text-decoration: none;
     color: #fff;
-    margin:10px;
+    margin: 10px;
     font-size: 18px;
     padding: 11px 15px 12px 15px;
     border: none;
@@ -132,7 +203,7 @@ button {
 button.si:hover {
     background-color: #ff0d0d;
 }
-  
+
 button.no:hover {
     background-color: #ddd;
     color: #333;
@@ -144,14 +215,14 @@ button.no:hover {
     color: inherit;
     text-decoration: none;
 }
-  
+
 a.volver:hover {
-    text-decoration:dashed;
+    text-decoration: dashed;
 }
 
 /*Estilos paginas de detalles*/
 
-.detalles{
+.detalles {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -160,22 +231,35 @@ a.volver:hover {
 /*Estilos paginas de listado*/
 .contenido {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1400px;
     padding: 20px;
 }
-.crear {
-    margin-left: 45%;
-    margin-bottom: 20px;
-}
+
+
+
 h1 {
+    font-weight: 700;
+    color: black;
+    font-family: sans-serif;
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
 }
 
+#objetos1{
+    margin-left: 10px;
+    margin-top: -13px;
+    float: right;
+}
+
+.espacio1{
+    word-spacing: 50px;
+}
+
 .objetos {
+    justify-content: space-between;
     background-color: #f2f2f2;
-    padding: 10px;
+    padding: 25px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
@@ -189,7 +273,7 @@ form {
     align-items: center;
     margin-top: 20px;
 }
-  
+
 label {
     font-weight: bold;
     margin-top: 10px;
@@ -202,14 +286,14 @@ button.Guardar:hover {
     text-decoration: none;
 }
 
-.atras{
+.atras {
     width: 180px;
     margin-left: 40%;
     margin-bottom: 10px;
     margin-top: 15px;
 }
 
-a{
+a {
     color: white;
     text-decoration: none;
 }
@@ -220,29 +304,30 @@ a{
     color: black;
 }
 
-#zoom{
+#zoom {
     display: inline-flex;
     margin-right: 1400px;
     margin-top: 3px;
     position: absolute;
 }
 
-#botondcha{
+#botondcha {
     margin-left: 3px;
     margin-right: 3px;
 }
 
-.tamaño{
+.tamaño {
     background-color: white;
     color: black;
     font-size: 20px;
     padding: 5px 15px;
-    text-align: center;
+    text-align: right;
     margin-top: 0;
-} 
+    margin-left: 500px;
+}
 
-.tamaño:hover{
-    background: #007bff;
+.tamaño:hover {
+    background: #005CA9;
     color: white;
 }
 
@@ -251,7 +336,7 @@ a{
 .contenidoLog {
     background-color: #FFFFFF;
     border-radius: 15px;
-    box-shadow: 0px 0px 30px 5px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -313,7 +398,7 @@ a{
 }
 
 .botonLog {
-    background-color: #0099CC;
+    background-color: #005CA9;
     border-radius: 15px;
     border: none;
     color: #FFFFFF;
@@ -333,7 +418,8 @@ a{
     font-size: 14px;
     margin-top: 10px;
 }
-.flexCentro{
+
+.flexCentro {
     margin-left: 50px;
 }
 
