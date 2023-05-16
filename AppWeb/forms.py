@@ -60,6 +60,13 @@ class FormEmpleado(ModelForm):
     class Meta:
         model = Empleado
         fields = '__all__'
+        labels = {
+        "dni": "DNI",
+        "nombre": "Nombre",
+        "apellidos": "Apellidos",
+        "email": "Email",
+        "telefono": "Teléfono",
+        }
         widgets = {
             'dni': forms.TextInput(attrs={'class':'form-control'}),
             'nombre': forms.TextInput(attrs={'class':'form-control'}),
