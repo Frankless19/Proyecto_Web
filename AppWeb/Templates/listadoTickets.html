@@ -4,11 +4,15 @@
 {% block contenido %}
 <div class="contenido">
 
-    <div id="mas">
-        <p><b>Alta ticket</b></p>
-        <a href="{% url 'gestion:crear-ticket' %}"><img class="crear" src="{% static 'images/añadirusr.png' %}" width="70px" title="Crear ticket nuevo"></a>        
-    </div>
-    <h1>LISTA DE TICKETS:</h1>
+    <div id="totalalta">
+        <div id="titulos">
+            <h1>LISTA DE TICKETS:</h1>
+        </div>
+        <div id="mas">
+            <p><b>Alta ticket</b></p>
+            <a href="{% url 'gestion:crear-ticket' %}"><img class="centrado" src="{% static 'images/añadirusr.png' %}"
+                    width="70px" title="Crear un empleado nuevo"></a>
+        </div>
 
     {% if object_list %}
         {% for ti in object_list %}

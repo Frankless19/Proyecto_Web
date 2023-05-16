@@ -3,28 +3,37 @@
 
 {% block contenido %}
 <div class="contenido">
-    
-    <div id="mas">
-        <p><b>Alta empleado</b></p>
-        <a href="{% url 'gestion:crear-empleado' %}"><img class="centrado" src="{% static 'images/añadirusr.png' %}" width="70px" title="Crear un empleado nuevo"></a>        
+
+    <div id="totalalta">
+        <div id="titulos">
+            <h1>LISTA DE EMPLEADOS:</h1>
+        </div>
+        <div id="mas">
+            <p><b>Alta empleado</b></p>
+            <a href="{% url 'gestion:crear-empleado' %}"><img class="centrado" src="{% static 'images/añadirusr.png' %}"
+                    width="70px" title="Crear un empleado nuevo"></a>
+        </div>
     </div>
-    <h1>LISTA DE EMPLEADOS:</h1>
 
     {% if object_list %}
-        {% for emp in object_list %}
-        <ul>
-            <div class="objetos">
-                <span><b>ID Empleado: </b>{{emp.id}} </span> &emsp;&emsp;&emsp;
-                <span><b>Nombre y apellidos: </b>{{emp.nombre}} {{emp.apellidos}} </span> &emsp;&emsp;&emsp;
-                <span><b>DNI: </b>{{ emp.dni }} </span>
-                <a id="objetos1" href="{% url 'gestion:detalle-empleado' emp.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del empleado" width="50px" ></a>
-                <a id="objetos1" href="{% url 'gestion:borrar-empleado' emp.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al empleado" width="50px"></a>
-                <a id="objetos1" href="{% url 'gestion:modificar-empleado' emp.id %}"><img  src="{% static 'images/editar.png' %}" title="Haz clic para editar este empleado" width="50px" ></a>
-            </div>
-        </ul>
-        {% endfor %}
+    {% for emp in object_list %}
+    <ul>
+        <div class="objetos">
+            <span><b>ID Empleado: </b>{{emp.id}} </span> &emsp;&emsp;&emsp;
+            <span><b>Nombre y apellidos: </b>{{emp.nombre}} {{emp.apellidos}} </span> &emsp;&emsp;&emsp;
+            <span><b>DNI: </b>{{ emp.dni }} </span>
+            <a id="objetos1" href="{% url 'gestion:detalle-empleado' emp.id %}"><img
+                    src="{% static 'images/info.png' %}" title="Pulsa para ver los detalles del empleado"
+                    width="50px"></a>
+            <a id="objetos1" href="{% url 'gestion:borrar-empleado' emp.id %}"><img
+                    src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al empleado" width="50px"></a>
+            <a id="objetos1" href="{% url 'gestion:modificar-empleado' emp.id %}"><img
+                    src="{% static 'images/editar.png' %}" title="Haz clic para editar este empleado" width="50px"></a>
+        </div>
+    </ul>
+    {% endfor %}
     {% else %}
-        <h1>No hay empleados disponibles</h1>
+    <h1>No hay empleados disponibles</h1>
     {% endif %}
 </div>
 {% endblock %}
