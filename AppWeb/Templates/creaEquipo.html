@@ -7,7 +7,8 @@
     <form method="POST">
         {% csrf_token %} {{form.as_p}}
         <button type="submit" class="Guardar">Guardar</button>
+        <a href="{% url 'gestion:listado-equipo' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Volver a la página anterior"></a>
     </form>
-    <a href="{% url 'gestion:listado-equipo' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Volver a la página anterior"></a>
+    
 </div>
 {% endblock %}

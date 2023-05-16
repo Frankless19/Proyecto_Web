@@ -16,7 +16,7 @@
             <div class="objetos">
                 <span></span><b>Numero de referencia: </b>{{ti.nref}}</span> &emsp;&emsp;&emsp;
                 <b>Titulo: </b>{{ti.titulo}}</span> &emsp;&emsp;&emsp;
-                <b>Descripcion: </b>{{ti.descripcion}}</span>
+                <b>Descripción: </b>{{ti.descripcion}}</span>
                 <a id="objetos1" href="{% url 'gestion:detalle-ticket' ti.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del ticket" width="50px"></a>
                 <a id="objetos1" href="{% url 'gestion:borrar-ticket' ti.id %}"><img src="{% static 'images/delete.png' %}" title="Haz clic para eliminar al ticket" width="50px"></a>
                 <a id="objetos1" href="{% url 'gestion:modificar-ticket' ti.id %}"><img src="{% static 'images/editar.png' %}" title="Haz clic para editar este ticket" width="50px" ></a>

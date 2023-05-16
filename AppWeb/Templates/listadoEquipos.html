@@ -14,7 +14,7 @@
         {% for eq in object_list %}
         <ul>
             <div class="objetos">
-                <span><b>Numero de serie: </b>{{eq.nserie}}</span> &emsp;&emsp;&emsp;
+                <span><b>Número de serie: </b>{{eq.nserie}}</span> &emsp;&emsp;&emsp;
                 <span></span><b>Modelo: </b>{{eq.modelo}}</span> &emsp;&emsp;&emsp;
                 <span></span><b>Marca: </b>{{eq.marca}}</span>
                 <a id="objetos1" href="{% url 'gestion:detalle-equipo' eq.id %}"><img src="{% static 'images/info.png' %}"  title="Pulsa para ver los detalles del equipo" width="50px"></a>

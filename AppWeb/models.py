@@ -15,7 +15,7 @@ class Equipo(models.Model):
 
     # Devuelve un string con la marca, el modelo, y el numero de serie de cada Equipo creado.
     def __str__(self):
-        return f" Equipo: {self.marca} {self.modelo}. Numero de serie: {self.nserie}"
+        return f" Equipo: {self.marca} {self.modelo}. Número de serie: {self.nserie}"
 
 
 # Creacion de la clase Ticket
@@ -34,7 +34,7 @@ class Ticket(models.Model):
     
     #Devuelve un string con la referencia, el titulo, y la descripcion de cada Equipo creado.
     def __str__(self):
-        return f" Referencia: {self.nref}. Titulo: {self.titulo}. Descripcion: {self.descripcion}"
+        return f" Referencia: {self.nref}. Titulo: {self.titulo}. Descripción: {self.descripcion}"
 
 # Creacion de la clase Empleado
 class Empleado(models.Model):
@@ -47,7 +47,7 @@ class Empleado(models.Model):
     # Devuelve un string con el nombre, apellido y DNI del empleado
 
     def __str__(self):
-        return f" Nombre: {self.nombre}. {self.apellidos}. Dni: {self.dni}"
+        return f" Nombre: {self.nombre}. {self.apellidos}. DNI: {self.dni}"
 
 class NivelUrgencia(models.Model):
     nombre = models.CharField(max_length=20)
