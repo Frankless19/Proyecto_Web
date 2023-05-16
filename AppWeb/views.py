@@ -28,54 +28,54 @@ class CrearEmpleado(CreateView):
     form_class = FormEmpleado
     template_name = 'creaEmpleado.html'
     queryset = Empleado
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+    success_url = "{% url 'gestion:listado-empleado' %}"
 
 class CrearEquipo(CreateView):
     form_class = FormEquipo
     template_name = 'creaEquipo.html'
     queryset = Equipo
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    success_url = "{% url 'gestion:listado-equipo' %}"
 
 class CrearTicket(CreateView):
     form_class = FormTicket
     template_name = 'creaTicket.html'
     queryset = Ticket
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
+    success_url = "{% url 'gestion:listado-ticket' %}"
 
 #Vistas para borrar
 class BorrarEmpleado(DeleteView):
     template_name = 'borrarEmpleado.html'
     model = Empleado
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+    success_url = "{% url 'gestion:listado-empleado' %}"
     
 class BorrarEquipo(DeleteView):
     template_name = 'borrarEquipo.html'
     model = Equipo
-    success_url  = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    success_url  = "{% url 'gestion:listado-equipo' %}"
     
 class BorrarTicket(DeleteView):
     template_name = 'borrarTicket.html'
     model = Ticket
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
+    success_url = "{% url 'gestion:listado-ticket' %}"
     
 #Vistas para modificar
 class ModificarEmpleado(UpdateView):
     form_class = FormEmpleado
     template_name = 'creaEmpleado.html'
     model = Empleado
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+    success_url = "{% url 'gestion:listado-empleado' %}"
 
 class ModificarEquipo(UpdateView):
     form_class = FormEquipo
     template_name = 'creaEquipo.html'
     model = Equipo
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    success_url = "{% url 'gestion:listado-equipo' %}"
 
 class ModificarTicket(UpdateView):
     form_class = FormTicket
     template_name = 'creaTicket.html'
     model = Ticket
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
+    success_url = "{% url 'gestion:listado-ticket' %}"
 
 #Vistas para los formularios
 def post_form(request):
@@ -103,7 +103,7 @@ class DetalleEmpleado(DetailView):
 class DetalleEmpleado(DetailView):
     template_name = 'detalleEmpleado.html'
     model = Empleado
-    
+
 #def show_empleado(request, empleado_id):
     #empleado = get_object_or_404(Empleado, pk=empleado_id)
     #context = {'empleado': empleado}

@@ -8,6 +8,6 @@
         {% csrf_token %} {{form.as_p}}
         <button type="submit" class="Guardar">Guardar</button>
     </form>
-    <a href="http://127.0.0.1:8000/AppWeb/listadoTickets/"><img class="atras" src="{% static 'images/back.png' %}" title="Volver a la página anterior"></a>
+    <a href="{% url 'gestion:listado-ticket' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Volver a la página anterior"></a>
 </div>
 {% endblock %}
