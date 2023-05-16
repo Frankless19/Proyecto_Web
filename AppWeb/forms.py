@@ -8,6 +8,13 @@ class FormEquipo(forms.ModelForm):
     class Meta:
         model = Equipo
         fields = '__all__'
+        labels = {
+        "nserie": "Número de serie",
+        "fechaAdquisicion": "Fecha de adquisición",
+        "fechaPuestaMarcha": "Fecha de puesta en marcha",
+        "provNombre": "Nombre del proveedor",
+        "provTelefono": "Teléfono del proveedor"}
+
         widgets = {
             'nserie': forms.TextInput(attrs={'class':'form-control'}),
             'modelo': forms.TextInput(attrs={'class':'form-control'}),
@@ -19,12 +26,19 @@ class FormEquipo(forms.ModelForm):
             'provTelefono': forms.NumberInput(attrs={'class':'form-control'}),
             'planta': forms.TextInput(attrs={'class':'form-control'}),
         }
+ 
 
 # Formulario asociado a la clase Ticket
 class FormTicket(forms.ModelForm):
     class Meta:
         model = Ticket
         fields = '__all__'
+        labels = {
+        "nref": "Número de referencia",
+        "fechaApertura": "Fecha de apertura",
+        "fechaResolucion": "Fecha de resolución",
+        "nivelUrgencia": "Nombre de urgencia",
+        }
         widgets = {
             'nref': forms.TextInput(attrs={'class': 'form-control'}),
             'titulo': forms.TextInput(attrs={'class': 'form-control'}),
