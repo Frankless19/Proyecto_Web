@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import ListaEmpleado, ListaEquipo, ListaTicket, CrearEmpleado, BorrarEmpleado, CrearEquipo, BorrarEquipo, ModificarEmpleado, ModificarEquipo, BorrarTicket, ModificarTicket, CrearTicket, DetalleEmpleado
+from .views import ListaEmpleado, ListaEquipo, ListaTicket, CrearEmpleado, BorrarEmpleado, CrearEquipo, BorrarEquipo, ModificarEmpleado, ModificarEquipo, BorrarTicket, ModificarTicket, CrearTicket, DetalleEmpleado, DetalleEquipo, DetalleTicket
 from AppWeb import views
 
 # Esta variable app_name sirve para que Django pueda diferenciar las URL de cada proyecto
@@ -23,10 +23,9 @@ urlpatterns = [
     path('AppWeb/modificarEquipo/<int:pk>/',ModificarEquipo.as_view(), name='modificar-equipo'),
     path('AppWeb/modificarTicket/<int:pk>/',ModificarTicket.as_view(), name='modificar-ticket'),
     
-    #path('AppWeb/listadoEmpleados/<int:empleado_id>',views.show_empleado, name='detalle-empleado'),
     path('AppWeb/listadoEmpleados/<int:pk>',views.DetalleEmpleado.as_view(), name='detalle-empleado'),
-    path('AppWeb/listadoEquipos/<int:equipo_id>',views.show_equipo, name='detalle-equipo'),
-    path('AppWeb/listadoTickets/<int:ticket_id>',views.show_ticket, name='detalle-ticket'),
+    path('AppWeb/listadoEquipos/<int:pk>',views.DetalleEquipo.as_view(), name='detalle-equipo'),
+    path('AppWeb/listadoTickets/<int:pk>',views.DetalleTicket.as_view(), name='detalle-ticket'),
     
     path('', views.loginPage, name="login"),
     

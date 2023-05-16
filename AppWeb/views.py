@@ -89,27 +89,33 @@ def post_form(request):
 #Vistas para mostrar en detalle
 class DetalleEmpleado(DetailView):
     template_name = 'detalleEmpleado.html'
-    model:Empleado
+    model = Empleado
 
     #def get_context_data(self, **kwargs): 
         #context super(Show_empleado, self).get_context_data(**kwargs)
         #context['titulo pagina'] = 'detalles del empleado'
         #return context
 
+class DetalleEmpleado(DetailView):
+    template_name = 'detalleEmpleado.html'
+    model = Empleado
+
+class DetalleEmpleado(DetailView):
+    template_name = 'detalleEmpleado.html'
+    model = Empleado
+    
 #def show_empleado(request, empleado_id):
     #empleado = get_object_or_404(Empleado, pk=empleado_id)
     #context = {'empleado': empleado}
     #return render(request, 'detalleEmpleado.html', context)
 
-def show_equipo(request, equipo_id):
-    equipo = get_object_or_404(Equipo, pk=equipo_id)
-    context = {'equipo': equipo}
-    return render(request, 'detalleEquipo.html', context)
+class DetalleEquipo(DetailView):
+    template_name = 'detalleEquipo.html'
+    model = Equipo
 
-def show_ticket(request, ticket_id):
-    ticket = get_object_or_404(Ticket, pk=ticket_id)
-    context = {'ticket': ticket}
-    return render(request, 'detalleTicket.html', context)
+class DetalleTicket(DetailView):
+    template_name = 'detalleTicket.html'
+    model = Ticket
 
 #Vista de login
 def loginPage(request):
