@@ -1,7 +1,8 @@
+from typing import Any, Dict
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import Empleado, Equipo, Ticket
 from .forms import FormEmpleado, FormTicket, FormEquipo
 from http.client import HTTPResponse
@@ -86,11 +87,19 @@ def post_form(request):
     return HttpResponse(f"Se ha registrado a {nombre} {apellido} con DNI {dni}")  
 
 #Vistas para mostrar en detalle
+class DetalleEmpleado(DetailView):
+    template_name = 'detalleEmpleado.html'
+    model:Empleado
 
-def show_empleado(request, empleado_id):
-    empleado = get_object_or_404(Empleado, pk=empleado_id)
-    context = {'empleado': empleado}
-    return render(request, 'detalleEmpleado.html', context)
+    #def get_context_data(self, **kwargs): 
+        #context super(Show_empleado, self).get_context_data(**kwargs)
+        #context['titulo pagina'] = 'detalles del empleado'
+        #return context
+
+#def show_empleado(request, empleado_id):
+    #empleado = get_object_or_404(Empleado, pk=empleado_id)
+    #context = {'empleado': empleado}
+    #return render(request, 'detalleEmpleado.html', context)
 
 def show_equipo(request, equipo_id):
     equipo = get_object_or_404(Equipo, pk=equipo_id)
