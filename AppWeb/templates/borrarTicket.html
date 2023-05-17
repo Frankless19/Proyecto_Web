@@ -7,7 +7,7 @@
     {% csrf_token %}
     <h4>¿Desea dar de baja el ticket seleccionado?</h4>
     <button class='si' type="submit">Si</button>
-    <a href="http://127.0.0.1:8000/AppWeb/listadoTickets/" class=" botonno no" >No</a>
+    <a href="{% url 'gestion:listado-ticket' %}" class=" botonno no" >No</a>
 </form>
 </div>
 {% endblock %}
