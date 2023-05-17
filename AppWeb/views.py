@@ -9,6 +9,7 @@ from http.client import HTTPResponse
 from django.contrib.auth import authenticate,login
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.urls import reverse_lazy
 
 #Vistas para listar
 class ListaEmpleado(ListView):
@@ -27,55 +28,55 @@ class ListaTicket(ListView):
 class CrearEmpleado(CreateView):
     form_class = FormEmpleado
     template_name = 'creaEmpleado.html'
-    queryset = Empleado
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+    model = Empleado
+    success_url = reverse_lazy('gestion:listado-empleado')
 
 class CrearEquipo(CreateView):
     form_class = FormEquipo
     template_name = 'creaEquipo.html'
-    queryset = Equipo
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    model = Equipo
+    success_url = reverse_lazy('gestion:listado-equipo')
 
 class CrearTicket(CreateView):
     form_class = FormTicket
     template_name = 'creaTicket.html'
-    queryset = Ticket
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
+    model = Ticket
+    success_url = reverse_lazy('gestion:listado-ticket')
 
 #Vistas para borrar
 class BorrarEmpleado(DeleteView):
     template_name = 'borrarEmpleado.html'
     model = Empleado
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+    success_url = reverse_lazy('gestion:listado-empleado')
     
 class BorrarEquipo(DeleteView):
     template_name = 'borrarEquipo.html'
     model = Equipo
-    success_url  = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    success_url  = reverse_lazy('gestion:listado-equipo')
     
 class BorrarTicket(DeleteView):
     template_name = 'borrarTicket.html'
     model = Ticket
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
+    success_url = reverse_lazy('gestion:listado-ticket')
     
 #Vistas para modificar
 class ModificarEmpleado(UpdateView):
     form_class = FormEmpleado
     template_name = 'creaEmpleado.html'
     model = Empleado
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEmpleados'
+    success_url = reverse_lazy('gestion:listado-empleado')
 
 class ModificarEquipo(UpdateView):
     form_class = FormEquipo
     template_name = 'creaEquipo.html'
     model = Equipo
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoEquipos'
+    success_url = reverse_lazy('gestion:listado-equipo')
 
 class ModificarTicket(UpdateView):
     form_class = FormTicket
     template_name = 'creaTicket.html'
     model = Ticket
-    success_url = 'http://127.0.0.1:8000/AppWeb/listadoTickets'
+    success_url = reverse_lazy('gestion:listado-ticket')
 
 #Vistas para los formularios
 def post_form(request):
