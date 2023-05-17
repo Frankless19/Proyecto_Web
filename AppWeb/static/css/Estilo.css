@@ -420,6 +420,10 @@ a {
     font-style: normal;
 }
 
-.busqueda{
-    height: 5em;
+.input-group .btn {
+    position: relative;
+    z-index: 2;
+    margin-top:1px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
