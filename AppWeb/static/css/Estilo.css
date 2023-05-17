@@ -263,6 +263,15 @@ button.Guardar:hover {
     text-decoration: none;
 }
 
+
+
+button.guardar1:hover {
+    background: #012a4c;
+    color: #ffffff;
+    border: 1px solid #aaa;
+    text-decoration: none;
+}
+
 .atras {
     width: 55px;
     margin-bottom: 10px;
@@ -409,4 +418,8 @@ a {
 
 #mt-2 i {
     font-style: normal;
+}
+
+.busqueda{
+    height: 5em;
 }

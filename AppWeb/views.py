@@ -10,19 +10,66 @@ from django.contrib.auth import authenticate,login
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse_lazy
+from django.db.models import Q
 
 #Vistas para listar
+#class ListaEmpleado(ListView):
+    #model = Empleado
+    #template_name = 'listadoEmpleados.html'
+
 class ListaEmpleado(ListView):
     model = Empleado
     template_name = 'listadoEmpleados.html'
+    context_object_name = 'empleados'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        busqueda = self.request.GET.get("buscar")
+
+        if busqueda:
+            queryset = queryset.filter(
+                Q(dni__icontains=busqueda) |
+                Q(nombre__icontains=busqueda) |
+                Q(apellidos__icontains=busqueda)
+            ).distinct()
+
+        return queryset
     
 class ListaEquipo(ListView):
     model = Equipo
     template_name = 'listadoEquipos.html'
+    context_object_name = 'equipos'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        busqueda = self.request.GET.get("buscar")
+
+        if busqueda:
+            queryset = queryset.filter(
+                Q(nserie__icontains=busqueda) |
+                Q(modelo__icontains=busqueda) |
+                Q(marca__icontains=busqueda)
+            ).distinct()
+
+        return queryset
     
 class ListaTicket(ListView):
     model = Ticket
     template_name = 'listadoTickets.html'
+    context_object_name = 'tickets'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        busqueda = self.request.GET.get("buscar")
+
+        if busqueda:
+            queryset = queryset.filter(
+                Q(nref__icontains=busqueda) |
+                Q(titulo__icontains=busqueda) |
+                Q(descripcion__icontains=busqueda)
+            ).distinct()
+
+        return queryset
 
 #Vistas para Crear objetos    
 class CrearEmpleado(CreateView):

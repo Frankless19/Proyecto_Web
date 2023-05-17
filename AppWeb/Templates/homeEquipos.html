@@ -16,6 +16,20 @@
             <a href="{% url 'gestion:listado-empleado' %}"><img class="logo" src="{% static 'images/LOGO.png' %}"
                     title="Logo de la empresa" alt="Logo"></a>
             <ul class="nav-menu">
+                {% block buscador %}
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
+                    method="GET">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar..."
+                            name="buscar" value="{{ request.GET.buscar }}">
+                        <div>
+                            <button class="btn btn-primary btn-block, guardar1" type="submit">Buscar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                {% endblock buscador %}
                 <div id="zoom">
                     <button class="tamaño"  onclick="alejar()">-</button>
                     <button class="tamaño" id="botondcha" onclick="acercar()">+</button>
