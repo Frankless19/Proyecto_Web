@@ -7,8 +7,8 @@ class Equipo(models.Model):
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=30)
     tipo = models.CharField(max_length=20)
-    fechaAdquisicion = models.DateField(null=True)
-    fechaPuestaMarcha = models.DateField(null=True)
+    fechaAdquisicion = models.DateField(null=True, blank=True)
+    fechaPuestaMarcha = models.DateField(null=True, blank=True)
     provNombre = models.CharField(max_length=30)
     provTelefono = models.IntegerField(default=0)
     planta = models.CharField(max_length=15)
@@ -23,8 +23,8 @@ class Ticket(models.Model):
     nref = models.CharField(max_length = 20, unique=True)
     titulo = models.CharField(max_length = 10)
     descripcion = models.CharField(max_length = 50)
-    fechaApertura = models.DateField(null=True)
-    fechaResolucion = models.DateField(null=True)
+    fechaApertura = models.DateField(null=True, blank=True)
+    fechaResolucion = models.DateField(null=True, blank=True)
     nivelUrgencia = models.ForeignKey('NivelUrgencia', on_delete=models.CASCADE) # relación one-to-many para seleccionar el nivel de urgencia
     tipo = models.ForeignKey('TipoTicket', on_delete=models.CASCADE) # relación one-to-many para seleccionar el tipo de ticket
     estado = models.ForeignKey('EstadoTicket', on_delete=models.CASCADE) # relación one-to-many para seleccionar el estado del ticket
