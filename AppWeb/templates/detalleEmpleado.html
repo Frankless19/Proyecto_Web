@@ -3,7 +3,7 @@
 
 {% block contenido %}
 {% if empleado %}
-<div class="contenido"> 
+<div class="contenido">
     <h2>DETALLES DEL EMPLEADO {{empleado.id}}</h2>
 
     <ul class="detalles">
@@ -25,7 +25,10 @@
     <p>No existe este empleado.</p>
     {% endif %}
 
-    <a href="{% url 'gestion:listado-empleado' %}"><img class="atras" src="{% static 'images/back.png' %}" width="100px" title="Pulsa para volver a la página anterior"></a>
-    
+    <a href="{% url 'gestion:modificar-empleado' empleado.id %}"><img src="{% static 'images/editar.png' %}" width="51px"
+        title="Haz clic para editar este empleado"></a>
+    <a href="{% url 'gestion:listado-empleado' %}"><img class="atras" src="{% static 'images/back.png' %}" width="100px"
+            title="Pulsa para volver a la página anterior"></a>
+
 </div>
 {% endblock %}

@@ -45,7 +45,8 @@
     {% else %}
     <p>No existe el ticket seleccionado.</p>
     {% endif %}
-
+    <a href="{% url 'gestion:modificar-ticket' ticket.id %}"><img src="{% static 'images/editar.png' %}" width="51px"
+        title="Haz clic para editar este ticket"></a>
     <a href="{% url 'gestion:listado-ticket' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
 </div>
 {% endblock %}

@@ -36,7 +36,8 @@
     {% else %}
     <p>No existe el equipo seleccionado.</p>
     {% endif %}
-
+    <a href="{% url 'gestion:modificar-equipo' equipo.id %}"><img src="{% static 'images/editar.png' %}" width="51px"
+        title="Haz clic para editar este equipo"></a>
     <a href="{% url 'gestion:listado-equipo' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Pulsa para volver a la página anterior"></a>
 </div>
 {% endblock %}
