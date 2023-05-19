@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header>
+    <header class='ocultar-y-mostrar'>
         <nav class="navbar">
             <a href="{% url 'gestion:listado-empleado' %}"><img class="logo" src="{% static 'images/LOGO.png' %}"
                     title="Logo de la empresa" alt="Logo"></a>
@@ -58,6 +58,7 @@
             </ul>
         </div>
     </footer>
+    <script type="text/javascript" src="{% static 'JS/mostrarmas.js' %}"></script>
 </body>
 
 </html>

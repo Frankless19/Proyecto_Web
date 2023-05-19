@@ -185,7 +185,7 @@ button.si:hover {
 
 button.no:hover {
     background-color: #ddd;
-    color: #333;
+    color: #ffffff;
     border: 1px solid #aaa;
     text-decoration: none;
 }
@@ -428,7 +428,19 @@ a {
     padding-bottom: 15px;
     margin-right: 190px;
 }
-#ocultar-mostrar{
-    margin-top:-4px;
-    margin-right: 190px;
+
+button:hover{
+    background: #7cc01c;
+    color: #000000;
+    border: 1px solid #aaa;
+    text-decoration: none;
 }
+
+.ocultar-mostrar1{
+margin-left: -250px;
+
+}
+.ocultar-mostrar2{
+    margin-left: -250px;
+    
+    }
