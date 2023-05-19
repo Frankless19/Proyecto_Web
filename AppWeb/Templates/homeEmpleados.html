@@ -12,12 +12,11 @@
 </head>
 
 <body>
-    <header>
+    <header id='ocultar-y-mostrar'>
         <nav class="navbar">
             <a href="{% url 'gestion:listado-empleado' %}"><img class="logo" src="{% static 'images/LOGO.png' %}"
                     title="Logo de la empresa" alt="Logo"></a>
             <ul class="nav-menu">
-
                 {% block buscador %}
                 <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
                     method="GET">
@@ -66,6 +65,7 @@
             </ul>
         </div>
     </footer>
+    <script type="text/javascript" src="{% static 'JS/mostrarmas.js' %}"></script>
 </body>
 
 </html>

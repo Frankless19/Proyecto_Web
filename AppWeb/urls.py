@@ -4,6 +4,7 @@ from .views import ListaEmpleado, ListaEquipo, ListaTicket, CrearEmpleado, Borra
 from AppWeb import views
 
 
+
 # Esta variable app_name sirve para que Django pueda diferenciar las URL de cada proyecto
 app_name = 'gestion'
 
