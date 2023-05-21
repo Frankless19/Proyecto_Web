@@ -3,7 +3,7 @@ from django.db import models
 # Creacion de la clase equipo
 
 class Equipo(models.Model):
-    nserie = models.CharField(max_length=20, unique=True, null=True, blank=True)
+    nserie = models.CharField(max_length=20, unique=True)
     modelo = models.CharField(max_length=50)
     marca = models.CharField(max_length=30)
     tipo = models.CharField(max_length=20)
