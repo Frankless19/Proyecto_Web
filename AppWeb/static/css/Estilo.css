@@ -437,10 +437,12 @@ button:hover{
 }
 
 .ocultar-mostrar1{
-margin-left: -250px;
+    margin-left: -255px;
+    margin-top: 0;
 
 }
 .ocultar-mostrar2{
-    margin-left: -250px;
+    margin-left: -255px;
+    margin-top: 0;
     
     }
