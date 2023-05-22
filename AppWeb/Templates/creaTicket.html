@@ -4,7 +4,7 @@
 {% block contenido %}
 <div class="contenido">
     <h2>CREAR O EDITAR TICKET</h2>
-    <form method="POST" id="miFormulario">
+    <form method="POST" id="miFormulario" novalidate>
         {% csrf_token %} {{form.as_p}}
         <button type="submit" class="Guardar">Guardar</button>
         <a href="{% url 'gestion:listado-ticket' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Volver a la página anterior"></a>
