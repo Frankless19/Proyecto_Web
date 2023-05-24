@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Ticket, Empleado, Equipo, NivelUrgencia, TipoTicket, EstadoTicket
+from .models import Ticket, Empleado, Equipo
 
 
 # Formulario asociado a la clase Equipo

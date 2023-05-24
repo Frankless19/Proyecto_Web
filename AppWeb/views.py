@@ -1,11 +1,9 @@
 from typing import Any, Dict
 from django.shortcuts import render
-from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import Empleado, Equipo, Ticket
 from .forms import FormEmpleado, FormTicket, FormEquipo
-from http.client import HTTPResponse
 from django.contrib.auth import authenticate,login
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -13,10 +11,6 @@ from django.urls import reverse_lazy
 from django.db.models import Q
 
 #Vistas para listar
-#class ListaEmpleado(ListView):
-    #model = Empleado
-    #template_name = 'listadoEmpleados.html'
-
 class ListaEmpleado(ListView):
     model = Empleado
     template_name = 'listadoEmpleados.html'
@@ -139,10 +133,6 @@ class DetalleEmpleado(DetailView):
     template_name = 'detalleEmpleado.html'
     model = Empleado
 
-    #def get_context_data(self, **kwargs): 
-        #context super(Show_empleado, self).get_context_data(**kwargs)
-        #context['titulo pagina'] = 'detalles del empleado'
-        #return context
 
 class DetalleEmpleado(DetailView):
     template_name = 'detalleEmpleado.html'
@@ -151,11 +141,6 @@ class DetalleEmpleado(DetailView):
 class DetalleEmpleado(DetailView):
     template_name = 'detalleEmpleado.html'
     model = Empleado
-
-#def show_empleado(request, empleado_id):
-    #empleado = get_object_or_404(Empleado, pk=empleado_id)
-    #context = {'empleado': empleado}
-    #return render(request, 'detalleEmpleado.html', context)
 
 class DetalleEquipo(DetailView):
     template_name = 'detalleEquipo.html'
