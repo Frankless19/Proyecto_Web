@@ -168,16 +168,50 @@ def loginPage(request):
     context = {}
     return render(request, 'login.html', context)
 
+
+
+
+
 class EmpListView(View):
     def get (self, request) :
         if ('dni' in request.GET):
-            cList = Empleado.objects.filter(dni__contains=request.GET('dni'))
+            eList = Empleado.objects.filter(dni__contains=request.GET('dni'))
         else:
-            cList = Empleado.objects.all()
-            return JsonResponse(list(cList.values()), safe=False)
+            eList = Empleado.objects.all()
+            return JsonResponse(list(eList.values()), safe=False)
 
 class EmpDetailView(View):
     def get (self, request, pk) :
         empleo = Empleado.objects.get(pk=pk)
         return JsonResponse(model_to_dict(empleo))
+    
+
+    
+class EquListView(View):
+    def get (self, request) :
+        if ('nserie' in request.GET):
+            eqList = Equipo.objects.filter(nserie__contains=request.GET('nserie'))
+        else:
+            eqList = Equipo.objects.all()
+            return JsonResponse(list(eqList.values()), safe=False)
+
+class EquDetailView(View):
+    def get (self, request, pk) :
+        equipo = Equipo.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(equipo))
+    
+
+    
+class TicListView(View):
+    def get (self, request) :
+        if ('nref' in request.GET):
+            tList = Ticket.objects.filter(nref__contains=request.GET('nref'))
+        else:
+            tList = Ticket.objects.all()
+            return JsonResponse(list(tList.values()), safe=False)
+
+class TicDetailView(View):
+    def get (self, request, pk) :
+        ticket = Ticket.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(ticket))
     

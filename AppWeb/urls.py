@@ -30,5 +30,11 @@ urlpatterns = [
 
     path('apiempleados', views.EmpListView.as_view(), name= 'listaempleados-api'),
     path('apiempleados/<int:pk>', views.EmpDetailView.as_view(), name= 'listaempleado-api'),
+
+    path('apiequipos', views.EquListView.as_view(), name= 'listaequipo-api'),
+    path('apiequipos/<int:pk>', views.EquDetailView.as_view(), name= 'listaequipo-api'),
+
+    path('apitickets', views.TicListView.as_view(), name= 'listaticket-api'),
+    path('apitickets/<int:pk>', views.TicDetailView.as_view(), name= 'listaticket-api'),
     
 ]
