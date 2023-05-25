@@ -3,8 +3,8 @@
 
 {% block contenido %}
 <div class="contenido">
-    <button class='ocultar-mostrar1'><i class="fas fa-bars" ></i>Mostrar navegación</button>
-    <button class='ocultar-mostrar2'><i class="fas fa-bars" ></i>Ocultar navegación</button>
+    <button class='ocultar-mostrar1'><i class="fas fa-bars"></i>Mostrar tabla</button>
+    <button class='ocultar-mostrar2'><i class="fas fa-bars"></i>Ocultar tabla</button>
     <div id="totalalta">
         <div id="titulos">
             <h1>LISTA DE EQUIPOS:</h1>
@@ -18,7 +18,9 @@
         {% if object_list %}
         {% for eq in object_list %}
         <ul>
-            <table id="js-equipo-table" class="table table-striped"></table><br>
+            <div class='ocultar-y-mostrar'>
+                <table id="js-equipo-table" class="table table-striped"></table>
+            </div>
             <div class="objetos">
                 <span><b>Número de serie: </b>{{eq.nserie}}</span> &emsp;&emsp;&emsp;
                 <span></span><b>Modelo: </b>{{eq.modelo}}</span> &emsp;&emsp;&emsp;
