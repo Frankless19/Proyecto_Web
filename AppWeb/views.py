@@ -1,7 +1,7 @@
 from typing import Any, Dict
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView, View
 from .models import Empleado, Equipo, Ticket
 from .forms import FormEmpleado, FormTicket, FormEquipo
 from django.contrib.auth import authenticate,login
@@ -9,6 +9,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db.models import Q
+from django.http import JsonResponse
+from django.forms import model_to_dict
 
 #Vistas para listar
 class ListaEmpleado(ListView):
@@ -165,3 +167,17 @@ def loginPage(request):
             messages.info(request, 'Usuario o contraseña incorrectos')
     context = {}
     return render(request, 'login.html', context)
+
+class EmpListView(View):
+    def get (self, request) :
+        if ('dni' in request.GET):
+            cList = Empleado.objects.filter(dni__contains=request.GET('dni'))
+        else:
+            cList = Empleado.objects.all()
+            return JsonResponse(list(cList.values()), safe=False)
+
+class EmpDetailView(View):
+    def get (self, request, pk) :
+        empleo = Empleado.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(empleo))
+    

@@ -27,5 +27,8 @@ urlpatterns = [
     path('AppWeb/listadoTickets/<int:pk>',views.DetalleTicket.as_view(), name='detalle-ticket'),
     
     path('', views.loginPage, name="login"),
+
+    path('apiempleados', views.EmpListView.as_view(), name= 'listaempleados-api'),
+    path('apiempleados/<int:pk>', views.EmpDetailView.as_view(), name= 'listaempleado-api'),
     
 ]
