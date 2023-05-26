@@ -35,7 +35,6 @@ fetch(API_URL)
 function addRows(empleados) {
     tbody = document.getElementById("tbody");
     empleados.forEach(element => {
-        console.log(tbody)
         tbody.appendChild(createEmpleadoRow(element))
     });
 }
