@@ -38,6 +38,12 @@
                     </li>
                     <li><a class="nav-link" href="{% url 'gestion:listado-equipo' %}">Equipos</a></li>
                     <li><a class="nav-link" href="{% url 'gestion:listado-ticket' %}" class="active">Tickets</a></li>
+                    <span style="color:white;">
+                        <b>Logout</b>
+                        <a href="{% url 'gestion:logout' %}"> 
+                            <img alt="Cerrar sesion" src="{% static 'images/logout.png' %}" width="30px" height="30px" title="Cerrar sesion">
+                        </a>
+                    </span>
                 </div>
             </ul>
         </nav>

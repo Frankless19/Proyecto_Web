@@ -20,8 +20,8 @@
                     method="GET">
                     {% csrf_token %}
                     <div class="input-group">
-                        <input type="text" class="form-control form-control-lg" placeholder="Buscar..."
-                            name="buscar" value="{{ request.GET.buscar }}">
+                        <input type="text" class="form-control form-control-lg" placeholder="Buscar..." name="buscar"
+                            value="{{ request.GET.buscar }}">
                         <div>
                             <button class="btn btn-primary btn-block, guardar1" type="submit">Buscar
                             </button>
@@ -30,7 +30,7 @@
                 </form>
                 {% endblock buscador %}
                 <div id="zoom">
-                    <button class="tamaño"  onclick="alejar()">-</button>
+                    <button class="tamaño" onclick="alejar()">-</button>
                     <button class="tamaño" id="botondcha" onclick="acercar()">+</button>
                 </div>
                 <div class="enlaces">
@@ -38,6 +38,13 @@
                     </li>
                     <li><a class="nav-link" href="{% url 'gestion:listado-equipo' %}" class="active">Equipos</a></li>
                     <li><a class="nav-link" href="{% url 'gestion:listado-ticket' %}">Tickets</a></li>
+                    <span style="color:white;">
+                        <b>Logout</b>
+                        <a href="{% url 'gestion:logout' %}">
+                            <img alt="Cerrar sesion" src="{% static 'images/logout.png' %}" width="30px" height="30px"
+                                title="Cerrar sesion">
+                        </a>
+                    </span>
                 </div>
             </ul>
         </nav>
@@ -48,11 +55,15 @@
     <footer>
         <div class="piePagina">
             <p id="proteccion"><em>© 2023 Deustomach Innovation S.L.</em></p>
-            <a id="admin" href="http://127.0.0.1:8000/admin/"><img id="logo_admin" src="{% static 'images/admin.png' %}" title="Administration"></a>
+            <a id="admin" href="http://127.0.0.1:8000/admin/"><img id="logo_admin" src="{% static 'images/admin.png' %}"
+                    title="Administration"></a>
             <ul id="otros">
-                <li>945 333 666<img class="logoInferior" src="{% static 'images/tlf.png' %}" title="imagen de un teléfono"></a></li>
-                <li>support@deustomach.es<img class="logoInferior" src="{% static 'images/mail.png' %}" title="imagen de un mail"></a></li>
-                <li>C/Falsa Nº123, 03310, Vitoria-Gasteiz<img class="logoInferior" src="{% static 'images/mapa.png' %}" title="imagen de un mapa"></a></li>
+                <li>945 333 666<img class="logoInferior" src="{% static 'images/tlf.png' %}"
+                        title="imagen de un teléfono"></a></li>
+                <li>support@deustomach.es<img class="logoInferior" src="{% static 'images/mail.png' %}"
+                        title="imagen de un mail"></a></li>
+                <li>C/Falsa Nº123, 03310, Vitoria-Gasteiz<img class="logoInferior" src="{% static 'images/mapa.png' %}"
+                        title="imagen de un mapa"></a></li>
             </ul>
         </div>
     </footer>

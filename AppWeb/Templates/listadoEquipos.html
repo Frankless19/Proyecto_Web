@@ -6,15 +6,18 @@
     <button class='ocultar-mostrar1'><i class="fas fa-bars"></i>Mostrar tabla</button>
     <button class='ocultar-mostrar2'><i class="fas fa-bars"></i>Ocultar tabla</button>
     <div id="totalalta">
+        
         <div id="titulos">
+            
             <h1>LISTA DE EQUIPOS:</h1>
         </div>
         <div id="mas">
             <p><b>Alta equipo</b></p>
             <a href="{% url 'gestion:crear-equipo' %}"><img class="centrado" src="{% static 'images/añadirusr.png' %}"
                     width="70px" title="Crear un empleado nuevo"></a>
+                    
         </div>
-
+       
         {% if object_list %}
         {% for eq in object_list %}
         <ul>
