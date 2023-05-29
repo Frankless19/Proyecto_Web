@@ -34,22 +34,15 @@
                 </div>
             </form>
         </div>
-        {% if form.errors %}
-        <div id="mensaje" class="error">
-            <p>Usuario o contraseña incorrectos</p>
-        </div>
-        {% endif %}
+        {{form.errors}}
         {% for message in messages %}
-        <div id="mensaje" class="mensaje">
-            <p>{{ message }}</p>
-        </div>
+        <p id="mensaje">{{message}}</p>
         {% endfor %}
         <div id="mt-2">
             <p>¿Necesitas una cuenta?</p>
             <p><i>Contacta con nuestro administrador</i></p>
             <a href="http://127.0.0.1:8000/admin/" id='logadmin'><p>Accede como administrador</p></a>
         </div>
-    </div>
 </body>
 
 </html>

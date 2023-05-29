@@ -1,21 +1,18 @@
 from typing import Any, Dict
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView, View
 from .models import Empleado, Equipo, Ticket
 from .forms import FormEmpleado, FormTicket, FormEquipo
-from django.contrib.auth import authenticate,login, logout
+from django.contrib.auth import authenticate,login
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.http import JsonResponse
 from django.forms import model_to_dict
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-
 
 #Vistas para listar
-@method_decorator(login_required(login_url='/'), name='dispatch')
 class ListaEmpleado(ListView):
     model = Empleado
     template_name = 'listadoEmpleados.html'
@@ -33,8 +30,7 @@ class ListaEmpleado(ListView):
             ).distinct()
 
         return queryset
-
-
+    
 class ListaEquipo(ListView):
     model = Equipo
     template_name = 'listadoEquipos.html'
@@ -157,7 +153,6 @@ class DetalleTicket(DetailView):
     model = Ticket
 
 #Vista de login
-@login_required(login_url='/')
 def loginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -166,12 +161,15 @@ def loginPage(request):
         user = authenticate(request, username=username, password=password)
     
         if user is not None:
-            login(request, user)
+            login (request,user)
             return redirect('/AppWeb/listadoEmpleados')
         else:
             messages.info(request, 'Usuario o contraseña incorrectos')
     context = {}
     return render(request, 'login.html', context)
+
+
+
 
 
 class EmpListView(View):
@@ -216,7 +214,4 @@ class TicDetailView(View):
     def get (self, request, pk) :
         ticket = Ticket.objects.get(pk=pk)
         return JsonResponse(model_to_dict(ticket))
-
-def logoutUser(request):
-    logout(request)
-    return redirect('/')
+    

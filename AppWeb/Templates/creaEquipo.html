@@ -5,13 +5,10 @@
 <div class="contenido">
     <h2>CREAR O EDITAR EQUIPO</h2>
     <form method="POST" id="miFormulario" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
+        {% csrf_token %} {{form.as_p}}
         <button type="submit" class="Guardar">Guardar</button>
-        <a href="{% url 'gestion:listado-equipo' %}">
-            <img class="atras" src="{% static 'images/back.png' %}" title="Volver a la página anterior">
-        </a>
+        <a href="{% url 'gestion:listado-equipo' %}"><img class="atras" src="{% static 'images/back.png' %}" title="Volver a la página anterior"></a>
     </form>
-    <div id="mensajeError"></div>
+    
 </div>
 {% endblock %}
