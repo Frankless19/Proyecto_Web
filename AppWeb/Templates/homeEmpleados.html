@@ -14,6 +14,12 @@
 <body>
     <header>
         <nav class="navbar">
+            <span>
+                ¡Hola, {{request.user}}!
+                <a href="{% url 'gestion:logout' %}"> 
+                    <img alt="Cerrar sesion" src="{% static 'images/logout.png' %}" width="30px" height="30px" title="Cerar sesion">
+                </a>
+            </span>
             <a href="{% url 'gestion:listado-empleado' %}"><img class="logo" src="{% static 'images/LOGO.png' %}"
                     title="Logo de la empresa" alt="Logo"></a>
             <ul class="nav-menu">

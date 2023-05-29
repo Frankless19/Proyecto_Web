@@ -7,8 +7,9 @@
     <form method="POST" id="miFormulario" novalidate>
         {% csrf_token %} {{form.as_p}}
         <button type="submit" class="Guardar">Guardar</button>
-        <a href="{% url 'gestion:listado-empleado' %}"><img class="atras" src="{% static 'images/back.png' %}" width="70px"  title="Volver a la página anterior"></a>
+        <a href="{% url 'gestion:listado-empleado' %}"><img class="atras" src="{% static 'images/back.png' %}"
+                width="70px" title="Volver a la página anterior"></a>
     </form>
-    
+    <div id="mensajeError"></div>
 </div>
 {% endblock %}
