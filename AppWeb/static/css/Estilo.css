@@ -450,3 +450,7 @@ button:hover{
 .derecha{
     color: white;
 }
+
+.campo-invalido {
+    border-color: red;
+}
